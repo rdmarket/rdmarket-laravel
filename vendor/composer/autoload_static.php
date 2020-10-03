@@ -491,8 +491,9 @@ class ComposerStaticInit43fbe42db68ff53e7794525df7e39d9c
     );
 
     public static $classMap = array (
+        'App\\Cliente' => __DIR__ . '/../..' . '/app/Cliente.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
-        'App\\Endereco' => __DIR__ . '/../..' . '/app/Endereco.php',
+        'App\\Contato' => __DIR__ . '/../..' . '/app/Endereco.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\loginController' => __DIR__ . '/../..' . '/app/Http/Controllers/loginController.php',
@@ -504,6 +505,9 @@ class ComposerStaticInit43fbe42db68ff53e7794525df7e39d9c
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Item_Nota' => __DIR__ . '/../..' . '/app/Item_Nota.php',
+        'App\\Nota_Fiscal' => __DIR__ . '/../..' . '/app/Nota_Fiscal.php',
+        'App\\Preco' => __DIR__ . '/../..' . '/app/Preco.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
