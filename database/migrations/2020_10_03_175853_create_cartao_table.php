@@ -14,7 +14,7 @@ class CreateCartaoTable extends Migration
     public function up()
     {
         Schema::create('cartao', function (Blueprint $table) {
-            $table->id('id_cartao')->primary();
+            $table->id('id_cartao');
             $table->bigInteger('id_cliente')->unsigned();
             $table->bigInteger('id_tipo_cartao')->unsigned();
             $table->string('num_cartao');

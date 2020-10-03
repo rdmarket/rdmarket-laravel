@@ -14,7 +14,7 @@ class CreateContatoTable extends Migration
     public function up()
     {
         Schema::create('contato', function (Blueprint $table) {
-            $table->id('id_contato')->primary();
+            $table->id('id_contato');
             $table->bigInteger('id_cliente')->unsigned();
             $table->bigInteger('id_tipo_contato')->unsigned();
             $table->string('ds_tipo_contato');

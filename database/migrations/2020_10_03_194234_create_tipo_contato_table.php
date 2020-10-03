@@ -14,7 +14,7 @@ class CreateTipoContatoTable extends Migration
     public function up()
     {
         Schema::create('tipo_contato', function (Blueprint $table) {
-            $table->id('id_tipo_contato')->primary();
+            $table->id('id_tipo_contato');
             $table->string('ds_tipo_contato');
             $table->timestamps();
         });
