@@ -504,15 +504,8 @@ class ComposerStaticInit43fbe42db68ff53e7794525df7e39d9c
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
-<<<<<<< HEAD
         'App\\Item_Pedido' => __DIR__ . '/../..' . '/app/Item_Pedido.php',
         'App\\Pedido' => __DIR__ . '/../..' . '/app/Pedido.php',
-=======
-        'App\\Models\\Estoque' => __DIR__ . '/../..' . '/app/Models/Estoque.php',
-        'App\\Models\\Imagem' => __DIR__ . '/../..' . '/app/Models/Imagem.php',
-        'App\\Models\\Produto' => __DIR__ . '/../..' . '/app/Models/Produto.php',
-        'App\\Models\\TipoProduto' => __DIR__ . '/../..' . '/app/Models/TipoProduto.php',
->>>>>>> 71892ece2dd4ec4c51dd8c6762ee74168e7b2b5b
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
