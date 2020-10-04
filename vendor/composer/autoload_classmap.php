@@ -19,8 +19,15 @@ return array(
     'App\\Http\\Middleware\\TrimStrings' => $baseDir . '/app/Http/Middleware/TrimStrings.php',
     'App\\Http\\Middleware\\TrustProxies' => $baseDir . '/app/Http/Middleware/TrustProxies.php',
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
+<<<<<<< HEAD
     'App\\Item_Pedido' => $baseDir . '/app/Item_Pedido.php',
     'App\\Pedido' => $baseDir . '/app/Pedido.php',
+=======
+    'App\\Models\\Estoque' => $baseDir . '/app/Models/Estoque.php',
+    'App\\Models\\Imagem' => $baseDir . '/app/Models/Imagem.php',
+    'App\\Models\\Produto' => $baseDir . '/app/Models/Produto.php',
+    'App\\Models\\TipoProduto' => $baseDir . '/app/Models/TipoProduto.php',
+>>>>>>> 71892ece2dd4ec4c51dd8c6762ee74168e7b2b5b
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',
     'App\\Providers\\BroadcastServiceProvider' => $baseDir . '/app/Providers/BroadcastServiceProvider.php',
