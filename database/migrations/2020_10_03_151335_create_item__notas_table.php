@@ -15,8 +15,8 @@ class CreateItemNotasTable extends Migration
     {
         Schema::create('item__notas', function (Blueprint $table) {
             $table->id('nr_nf_item');
-            $table->bigInteger('id_nf');
-            $table->bigInteger('id_produto');
+            $table->bigInteger('id_nf')->unsigned(); 
+            $table->bigInteger('id_produto')->unsigned();
             $table->integer('qt_item');
             $table->float('vl_unitario', 5,2);
             $table->timestamps();

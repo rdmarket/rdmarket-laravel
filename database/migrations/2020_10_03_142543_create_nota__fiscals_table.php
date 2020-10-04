@@ -16,9 +16,9 @@ class CreateNotaFiscalsTable extends Migration
         Schema::create('nota__fiscals', function (Blueprint $table) {
             $table->id('id_nf');
             $table->timestamps();
-            $table->bigInteger('id_pedido');
+            $table->bigInteger('id_pedido')->unsigned(); 
             $table->dateTime('dt_emissao');
-            $table->String('cl_nota');
+            $table->float('vl_nota',5,2);
             $table->bigInteger('nr_nf');
             $table->bigInteger('nr_serie');
         });
