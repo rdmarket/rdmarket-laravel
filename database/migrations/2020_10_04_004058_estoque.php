@@ -13,7 +13,7 @@ class Estoque extends Migration
      */
     public function up()
     {
-        Schema::create('Estoque', function (Blueprint $table) {
+        Schema::create('estoque', function (Blueprint $table) {
             $table->bigInteger('id_produto')->unsigned();
             $table->bigInteger('qtd_produto_estoque');
             $table->timestamps();
@@ -27,6 +27,6 @@ class Estoque extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Estoque');
+        Schema::dropIfExists('estoque');
     }
 }

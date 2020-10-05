@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePedido extends Migration
+class Pedido extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreatePedido extends Migration
      */
     public function up()
     {
-        Schema::create('Pedido', function (Blueprint $table) {
+        Schema::create('pedido', function (Blueprint $table) {
             $table->id('id_pedido');
             $table->bigInteger('id_cliente');
             $table->bigInteger('id_forma_pagamento');
@@ -35,6 +35,6 @@ class CreatePedido extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Pedido');
+        Schema::dropIfExists('pedido');
     }
 }

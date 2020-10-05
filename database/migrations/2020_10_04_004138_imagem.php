@@ -13,7 +13,7 @@ class Imagem extends Migration
      */
     public function up()
     {
-        Schema::create('Imagem', function (Blueprint $table) {
+        Schema::create('imagem', function (Blueprint $table) {
             $table->increments('id_imagem');
             $table->bigInteger('id_produto')->unsigned();
             $table->string('caminho_imagem');                                    
@@ -29,6 +29,6 @@ class Imagem extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Imagem');
+        Schema::dropIfExists('imagem');
     }
 }

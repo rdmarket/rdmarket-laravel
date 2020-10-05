@@ -10,6 +10,8 @@ class TipoProduto extends Model
         'id_tipo_produto','ds_tipo_produto'
     ];
 
+    protected $table = 'tipo_produto';
+
     public function produto()
     {
         return $this->hasOne('App\Models\Produto');

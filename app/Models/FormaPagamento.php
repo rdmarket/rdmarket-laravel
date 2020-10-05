@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class FormaPagamento extends Model
 {
     //
-    protected $table = 'Forma_Pagamento';
+    protected $table = 'forma_pagamento';
     
     public function pedido()
     {

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class StatusPedido extends Model
 {
     //
-    protected $table = 'Status_Pedido';
+    protected $table = 'status_pedido';
     protected $fillable = ['desc_status_pedido'];
 
 
