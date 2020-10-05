@@ -12,5 +12,6 @@ class ClienteController extends BaseController
         $this->classe = Cliente::class;
         $this->view = 'admin.clientes';
     
+        
    }
 }

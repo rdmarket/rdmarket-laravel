@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 abstract class BaseController extends Controller
 {
+    
     protected $classe;
     protected $view;
 
