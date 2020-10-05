@@ -8,6 +8,7 @@ class Cartao extends Model
 {
     protected $fillable = ['id_cliente','id_tipo_cartao','num_cartao','num_cpf','nm_impresso','nm_bandeira'];
 
+    protected $table = 'cartao';
     
     public function cliente()
     {

@@ -8,6 +8,7 @@ class Contato extends Model
 {
     protected $fillable = ['id_cliente','id_tipo_contato', 'ds_tipo_contato'];
 
+    protected $table = 'contato';
 
     public function cliente()
     {
