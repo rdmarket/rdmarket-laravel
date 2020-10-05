@@ -9,7 +9,9 @@ class Cliente extends Model
     protected $fillable = [
         'nome', 'cpf', 'data_nascimento', 'senha'
     ];
-
+    
+    protected $table = 'cliente';
+    
     public function contato()
     {
         return $this->hasMany('App\Models\Contato');

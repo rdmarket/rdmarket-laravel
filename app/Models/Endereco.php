@@ -10,6 +10,8 @@ class Endereco extends Model
         'id_tipo_endereco', 'rua', 'numero', 'complemento', 'bairro', 'cidade', 'estado', 'ativo'
     ];
 
+    protected $table = 'endereco';
+    
     public function tipo()
     {
         return $this->hasOne('App\Models\TipoEndereco');

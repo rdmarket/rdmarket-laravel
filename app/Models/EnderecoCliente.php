@@ -10,6 +10,8 @@ class EnderecoCliente extends Model
         'id_cliente', 'id_endereco'
     ];
 
+    protected $table = 'endereco_cliente';
+
     public function cliente()
     {
         return $this->belongsTo('App\Models\Cliente');
