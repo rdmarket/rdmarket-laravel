@@ -23,7 +23,6 @@ class Endereco extends Migration
             $table->string('bairro');
             $table->string('cidade');
             $table->string('estado');
-            $table->boolean('ativo');
             $table->timestamps();
         });
     }

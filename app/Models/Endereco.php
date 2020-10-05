@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Endereco extends Model
 {
     protected $fillable = [
-        'id_tipo_endereco', 'rua', 'numero', 'complemento', 'bairro', 'cidade', 'estado', 'ativo'
+        'id_tipo_endereco', 'rua', 'numero', 'complemento', 'bairro', 'cidade', 'estado'
     ];
 
     protected $table = 'endereco';
