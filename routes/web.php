@@ -30,3 +30,7 @@ Route::put('/admin/clientes/atualizar/{id}', 'admin\ClienteController@atualizar'
 ->name('admin.clientes.atualizar');
 Route::delete('/admin/clientes/deletar/{id}', 'admin\ClienteController@deletar')
 ->name('admin.clientes.deletar');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

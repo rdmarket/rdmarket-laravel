@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-primary">
-    <a class="navbar-brand" href="#">Admin Cursos</a>
+    <a class="navbar-brand" href="#">RD Market</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -10,7 +10,7 @@
             </li>
             @guest
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('admin.cursos') }}">Cursos</a>
+                    <a class="nav-link" href="{{ route('admin.clientes') }}">Cursos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -20,7 +20,7 @@
                 </li>
             @else
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('admin.cursos') }}">Cursos</a>
+                    <a class="nav-link" href="{{ route('admin.clientes') }}">Cursos</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
