@@ -41,17 +41,17 @@
                 <tbody>
                     @foreach($itens as $item)
                         <tr>
-                            <td>{{ $item->id }}</td>
+                            <td>{{ $item->id_cliente}}</td>
                             <td>{{ $item->nome }}</td>
                             <td>{{ $item->cpf }}</td>
-                            <td>{{ $item->data_nascimento }}</td>
+                            <td>{{ \Carbon\Carbon::parse($item->data_nascimento)->format('d/m/Y') }}</td>
                             <td>
                                 <a class="btn btn-primary"
-                                    href="{{route('admin.clientes.editar', $item->id)}}">
+                                    href="{{route('admin.clientes.editar', $item->id_cliente)}}">
                                     Editar</a>
                             </td>
                             <td>
-                                <form action="{{route('admin.clientes.deletar', $item->id)}}" method="post">
+                                <form action="{{route('admin.clientes.deletar', $item->id_cliente)}}" method="post"> 
                                     @csrf
                                     @method('DELETE')
                                     <!-- <input type="submit" name="excluir" value="delete" class="btn btn-danger"> -->

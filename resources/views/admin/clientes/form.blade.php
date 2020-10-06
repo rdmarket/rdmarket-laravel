@@ -9,5 +9,5 @@
 </div>
 <div class="form-group">
     <label for="data_nascimento">Data de nascimento</label>
-    <input type="text" class="form-control-file" id="data_nascimento" name="data_nascimento" value="{{$item->data_nascimento ?? ''}}" placeholder="aaaa/mm/dd">
+    <input type="date" class="form-control-file" id="data_nascimento" name="data_nascimento" value="{{$item->data_nascimento ?? ''}}">
 </div>

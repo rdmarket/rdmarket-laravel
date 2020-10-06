@@ -11,6 +11,7 @@ class Cliente extends Model
     ];
     
     protected $table = 'cliente';
+    protected $primaryKey = 'id_cliente';
     
     public function contato()
     {
