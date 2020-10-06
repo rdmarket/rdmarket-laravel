@@ -1,16 +1,16 @@
 @extends('layout.site')
 
-@section('titulo', 'Adicionar Produto')
+@section('titulo', 'Adicionar Cliente')
 
 
 @section('conteudo')
     <div class="container">
-        <h3>Adiconar Produto</h3>
+        <h3>Adicionar Cliente</h3>
         <div class="row">
-            <form action="{{ route('admin.produtos.salvar') }}" method="post"
+            <form action="{{ route('admin.clientes.salvar') }}" method="post"
                 enctype="multipart/form-data">
                 @csrf
-                @include('admin.produtos.form')
+                @include('admin.clientes.form')
                 <button type="submit" class="btn btn-success">Salvar</button>
             </form>
         </div>

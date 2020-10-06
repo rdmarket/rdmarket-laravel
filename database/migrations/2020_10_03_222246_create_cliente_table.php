@@ -18,7 +18,6 @@ class CreateClienteTable extends Migration
             $table->string('nome');
             $table->string('cpf');
             $table->date('data_nascimento');
-            $table->string('senha');
             $table->timestamps();
         });
     }
