@@ -1,13 +1,13 @@
 <div class="form-group">
-    <label for="descricao">Nome</label>
-    <input type="text" class="form-control" id="descricao" name="descricao" value="{{$produto->descricao ?? ''}}" placeholder="Ex: Arroz Camil">
+    <label for="nome">Nome</label>
+    <input type="text" class="form-control" id="nome" name="nome" value="{{$item->nome ?? ''}}">
    
 </div>
 <div class="form-group">
-    <label for="conteudo">CPF</label>
-    <input type="text" class="form-control" id="conteudo" name="conteudo" value="{{$produto->conteudo ?? ''}}" placeholder="Ex: 5kg">
+    <label for="cpf">CPF</label>
+    <input type="text" class="form-control" id="cpf" name="cpf" value="{{$item->cpf ?? ''}}" placeholder="Ex: 111.111.111/11">
 </div>
 <div class="form-group">
-    <label for="preco">Data de nascimento</label>
-    <input type="text" class="form-control-file" id="preco" name="preco" value="{{$produto->preco ?? ''}}" placeholder="Ex: 24.90">
+    <label for="data_nascimento">Data de nascimento</label>
+    <input type="text" class="form-control-file" id="data_nascimento" name="data_nascimento" value="{{$item->data_nascimento ?? ''}}" placeholder="aaaa/mm/dd">
 </div>

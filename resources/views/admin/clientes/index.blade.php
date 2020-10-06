@@ -32,7 +32,7 @@
                     <tr>
                         <th scope="col">Id</th>
                         <th scope="col">Nome</th>
-                        <th scope="col">Cpf</th>
+                        <th scope="col">CPF</th>
                         <th scope="col">Data de nascimento</th>
                         <th scope="col">Ações</th>
                         <th scope="col"></th>

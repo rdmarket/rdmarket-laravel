@@ -21,7 +21,8 @@ Route::get('/', 'HomeController@index')
 
 Route::get('/admin/clientes', 'admin\ClienteController@index')
 ->name('admin.clientes');
-Route::get('/admin/clientes/adicionar', 'admin\ClienteController@adicionar');
+Route::get('/admin/clientes/adicionar', 'admin\ClienteController@adicionar')
+->name('admin.clientes.adicionar');
 Route::post('admin/clientes/salvar', 'admin\ClienteController@salvar')
 ->name('admin.clientes.salvar');
 Route::get('/admin/clientes/editar/{id}', 'admin\ClienteController@editar')
