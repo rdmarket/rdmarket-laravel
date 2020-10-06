@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\admin;
-use App\Pedido;
+use App\Models\Pedido;
 
 class PedidoController extends BaseController
 {
