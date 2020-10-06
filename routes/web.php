@@ -13,6 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/home', 'HomeController@index')
+->name('home');
+Route::get('/', 'HomeController@index')
+->name('home');
+
+
+Route::get('/admin/clientes', 'admin\ClienteController@index')
+->name('admin.clientes');
+Route::get('/admin/clientes/adicionar', 'admin\ClienteController@adicionar');
+Route::post('admin/clientes/salvar', 'admin\ClienteController@salvar')
+->name('admin.clientes.salvar');
+Route::get('/admin/clientes/editar/{id}', 'admin\ClienteController@editar')
+->name('admin.clientes.editar');
+Route::put('/admin/clientes/atualizar/{id}', 'admin\ClienteController@atualizar')
+->name('admin.clientes.atualizar');
+Route::delete('/admin/clientes/deletar/{id}', 'admin\ClienteController@deletar')
+->name('admin.clientes.deletar');
