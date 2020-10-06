@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Endereco extends Migration
+class CreateEnderecoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -19,7 +19,7 @@ class Endereco extends Migration
             $table->string('cep');
             $table->string('rua');
             $table->string('numero');
-            $table->string('complemento')->nullable->default(NULL);
+            $table->string('complemento')->nullable()->default(NULL);
             $table->string('bairro');
             $table->string('cidade');
             $table->string('estado');

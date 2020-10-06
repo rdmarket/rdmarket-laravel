@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePrecosTable extends Migration
+class CreatePrecoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreatePrecosTable extends Migration
      */
     public function up()
     {
-        Schema::create('precos', function (Blueprint $table) {
+        Schema::create('preco', function (Blueprint $table) {
             $table->id('id_preco');
             $table->bigInteger('id_produto')->unsigned(); 
             $table->float('valor_aquisicao', 5,2);

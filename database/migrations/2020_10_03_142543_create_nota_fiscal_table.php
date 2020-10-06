@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateNotaFiscalsTable extends Migration
+class CreateNotaFiscalTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateNotaFiscalsTable extends Migration
      */
     public function up()
     {
-        Schema::create('nota__fiscals', function (Blueprint $table) {
+        Schema::create('nota_fiscal', function (Blueprint $table) {
             $table->id('id_nf');
             $table->timestamps();
             $table->bigInteger('id_pedido')->unsigned(); 

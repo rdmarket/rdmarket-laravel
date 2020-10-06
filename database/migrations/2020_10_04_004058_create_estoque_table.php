@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateItemNotasTable extends Migration
+class CreateEstoqueTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateItemNotasTable extends Migration
      */
     public function up()
     {
-        Schema::create('item__notas', function (Blueprint $table) {
-            $table->id('nr_nf_item');
-            $table->bigInteger('id_nf')->unsigned(); 
+        Schema::create('estoque', function (Blueprint $table) {
             $table->bigInteger('id_produto')->unsigned();
-            $table->integer('qt_item');
-            $table->float('vl_unitario', 5,2);
+            $table->bigInteger('qtd_produto_estoque');
             $table->timestamps();
         });
     }
@@ -30,6 +27,6 @@ class CreateItemNotasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('item__notas');
+        Schema::dropIfExists('estoque');
     }
 }

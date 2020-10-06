@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Estoque extends Migration
+class CreateTipoProdutoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class Estoque extends Migration
      */
     public function up()
     {
-        Schema::create('estoque', function (Blueprint $table) {
-            $table->bigInteger('id_produto')->unsigned();
-            $table->bigInteger('qtd_produto_estoque');
+        Schema::create('tipo_produto', function (Blueprint $table) {
+            $table->increments('id_tipo_produto');
+            $table->string('ds_tipo_produto');
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class Estoque extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('estoque');
+        Schema::dropIfExists('tipo_produto');
     }
 }

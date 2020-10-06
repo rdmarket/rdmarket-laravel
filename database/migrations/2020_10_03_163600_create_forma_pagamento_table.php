@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class StatusPedido extends Migration
+class CreateFormaPagamentoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class StatusPedido extends Migration
      */
     public function up()
     {
-        Schema::create('status_pedido', function (Blueprint $table) {
-            $table->id('id_status_pedido');
-            $table->string('desc_status_pedido');
+        Schema::create('forma_pagamento', function (Blueprint $table) {
+            $table->id('id_forma_pagamento');
+            $table->string('ds_forma_pagamento');
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class StatusPedido extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('status_pedido');
+        Schema::dropIfExists('forma_pagamento');
     }
 }

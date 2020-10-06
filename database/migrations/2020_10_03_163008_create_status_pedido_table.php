@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class TipoProduto extends Migration
+class CreateStatusPedidoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class TipoProduto extends Migration
      */
     public function up()
     {
-        Schema::create('tipo_produto', function (Blueprint $table) {
-            $table->increments('id_tipo_produto');
-            $table->string('ds_tipo_produto');
+        Schema::create('status_pedido', function (Blueprint $table) {
+            $table->id('id_status_pedido');
+            $table->string('desc_status_pedido');
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class TipoProduto extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipo_produto');
+        Schema::dropIfExists('status_pedido');
     }
 }
