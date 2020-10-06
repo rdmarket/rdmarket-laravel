@@ -1,13 +1,13 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Cliente extends Model
 {
     protected $fillable = [
-        'nome', 'cpf', 'data_nascimento', 'senha'
+        'nome', 'cpf', 'data_nascimento'
     ];
     
     protected $table = 'cliente';

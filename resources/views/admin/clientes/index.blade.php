@@ -1,17 +1,17 @@
 @extends('layout.site')
 
-@section('titulo', 'Produtos')
+@section('titulo', 'clientes')
 
 @section('conteudo')
 <div class="container">
 <div class="container">
         <div class="row mt-5 mb-2">
             <div class="col-9">
-                <h3>Lista de Cursos</h3>
+                <h3>Lista de Clientes</h3>
             </div>
             <div class="col-3">
                 <a class="btn btn-success"
-                   href="{{ route('admin.produtos.adicionar') }}">
+                   href="{{ route('admin.clientes.adicionar') }}">
                     Adicionar
                 </a>
             </div>
@@ -31,11 +31,9 @@
                 <thead>
                     <tr>
                         <th scope="col">Id</th>
-                        <th scope="col">Descrição</th>
-                        <th scope="col">Conteúdo</th>
-                        <th scope="col">Preço</th>
-                        <th scope="col">Imagem</th>
-                        <th scope="col">Categoria</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Cpf</th>
+                        <th scope="col">Data de nascimento</th>
                         <th scope="col">Ações</th>
                         <th scope="col"></th>
                     </tr>
@@ -44,18 +42,16 @@
                     @foreach($itens as $item)
                         <tr>
                             <td>{{ $item->id }}</td>
-                            <td>{{ $item->descricao }}</td>
-                            <td>{{ $item->conteudo }}</td>
-                            <td>{{ $item->preco }}</td>
-                            <td><img width="70" src="{{asset($item->imagem)}}"></td>
-                            <td>{{ $item->categoria }}</td>
+                            <td>{{ $item->nome }}</td>
+                            <td>{{ $item->cpf }}</td>
+                            <td>{{ $item->data_nascimento }}</td>
                             <td>
                                 <a class="btn btn-primary"
-                                    href="{{route('admin.produtos.editar', $item->id)}}">
+                                    href="{{route('admin.clientes.editar', $item->id)}}">
                                     Editar</a>
                             </td>
                             <td>
-                                <form action="{{route('admin.produtos.deletar', $item->id)}}" method="post">
+                                <form action="{{route('admin.clientes.deletar', $item->id)}}" method="post">
                                     @csrf
                                     @method('DELETE')
                                     <!-- <input type="submit" name="excluir" value="delete" class="btn btn-danger"> -->
