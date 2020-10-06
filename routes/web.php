@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,3 +33,17 @@ Route::put('/admin/clientes/atualizar/{id}', 'admin\ClienteController@atualizar'
 ->name('admin.clientes.atualizar');
 Route::delete('/admin/clientes/deletar/{id}', 'admin\ClienteController@deletar')
 ->name('admin.clientes.deletar');
+
+//Rotas de Pedidos
+Route::get('/admin/pedidos', 'admin\PedidoController@index')
+->name('admin.pedidos');
+Route::get('/admin/pedidos/adicionar', 'admin\PedidoController@adicionar')
+->name('admin.pedidos.adicionar');
+Route::post('admin/pedidos/salvar', 'admin\PedidoController@salvar')
+->name('admin.pedidos.salvar');
+Route::get('/admin/pedidos/editar/{id}', 'admin\PedidoController@editar')
+->name('admin.pedidos.editar');
+Route::put('/admin/pedidos/atualizar/{id}', 'admin\PedidoController@atualizar')
+->name('admin.pedidos.atualizar');
+Route::delete('/admin/pedidos/deletar/{id}', 'admin\PedidoController@deletar')
+->name('admin.pedidos.deletar');
