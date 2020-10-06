@@ -13,16 +13,4 @@ class ClienteController extends BaseController
         $this->view = 'admin.clientes';
     
    }
-
-   public function tratarImagem(Request $req)
-   {
-       $imagem = $req->file('imagem');
-       $num = rand(1111, 9999);
-       $dir = 'img/cursos/';
-       $ext = $imagem->guessClientExtension();
-       $nomeImagem = 'imagem_' . $num . '.' . $ext;
-       $imagem->move($dir, $nomeImagem);
-
-       return $dir . $nomeImagem;
-   }
 }
