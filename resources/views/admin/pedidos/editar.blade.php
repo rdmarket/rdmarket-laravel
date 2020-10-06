@@ -1,11 +1,11 @@
 @extends('layout.site')
 
-@section('titulo', 'Editar Produto')
+@section('titulo', 'Editar Pedido')
 
 
 @section('conteudo')
     <div class="container">
-        <h3>Editar Produto</h3>
+        <h3>Editar Pedido</h3>
         <div class="row">
             <form action="{{route('admin.pedidos.atualizar', $item->id_pedido)}}" method="post">
                 @csrf
