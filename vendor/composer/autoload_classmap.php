@@ -8,8 +8,6 @@ $baseDir = dirname($vendorDir);
 return array(
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
-<<<<<<< HEAD
-    'App\\FormaPagamento' => $baseDir . '/app/Models/FormaPagamento.php',
     'App\\Http\\Controllers\\Api\\BaseController' => $baseDir . '/app/Http/Controllers/Api/BaseController.php',
     'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
     'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
@@ -17,16 +15,13 @@ return array(
     'App\\Http\\Controllers\\Auth\\RegisterController' => $baseDir . '/app/Http/Controllers/Auth/RegisterController.php',
     'App\\Http\\Controllers\\Auth\\ResetPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ResetPasswordController.php',
     'App\\Http\\Controllers\\Auth\\VerificationController' => $baseDir . '/app/Http/Controllers/Auth/VerificationController.php',
-=======
->>>>>>> d1a468de146f8c13a6e4625304f9de87054ce559
+    'App\\Http\\Controllers\\BaseController' => $baseDir . '/app/Http/Controllers/BaseController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
     'App\\Http\\Controllers\\admin\\BaseController' => $baseDir . '/app/Http/Controllers/admin/BaseController.php',
     'App\\Http\\Controllers\\admin\\ClienteController' => $baseDir . '/app/Http/Controllers/admin/ClienteController.php',
-<<<<<<< HEAD
-=======
     'App\\Http\\Controllers\\admin\\PedidoController' => $baseDir . '/app/Http/Controllers/admin/PedidoController.php',
->>>>>>> d1a468de146f8c13a6e4625304f9de87054ce559
+    'App\\Http\\Controllers\\admin\\ProdutoController' => $baseDir . '/app/Http/Controllers/admin/ProdutoController.php',
     'App\\Http\\Controllers\\api\\ListaController' => $baseDir . '/app/Http/Controllers/api/ListaController.php',
     'App\\Http\\Controllers\\loginController' => $baseDir . '/app/Http/Controllers/loginController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
@@ -37,16 +32,11 @@ return array(
     'App\\Http\\Middleware\\TrimStrings' => $baseDir . '/app/Http/Middleware/TrimStrings.php',
     'App\\Http\\Middleware\\TrustProxies' => $baseDir . '/app/Http/Middleware/TrustProxies.php',
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
-<<<<<<< HEAD
-    'App\\ItemNota' => $baseDir . '/app/Models/ItemNota.php',
-    'App\\ItemPedido' => $baseDir . '/app/Models/ItemPedido.php',
-=======
     'App\\Models\\Cartao' => $baseDir . '/app/Models/Cartao.php',
     'App\\Models\\Cliente' => $baseDir . '/app/Models/Cliente.php',
     'App\\Models\\Contato' => $baseDir . '/app/Models/Contato.php',
     'App\\Models\\Endereco' => $baseDir . '/app/Models/Endereco.php',
     'App\\Models\\EnderecoCliente' => $baseDir . '/app/Models/EnderecoCliente.php',
->>>>>>> d1a468de146f8c13a6e4625304f9de87054ce559
     'App\\Models\\Estoque' => $baseDir . '/app/Models/Estoque.php',
     'App\\Models\\FormaPagamento' => $baseDir . '/app/Models/FormaPagamento.php',
     'App\\Models\\Imagem' => $baseDir . '/app/Models/Imagem.php',
@@ -61,12 +51,6 @@ return array(
     'App\\Models\\TipoContato' => $baseDir . '/app/Models/TipoContato.php',
     'App\\Models\\TipoEndereco' => $baseDir . '/app/Models/TipoEndereco.php',
     'App\\Models\\TipoProduto' => $baseDir . '/app/Models/TipoProduto.php',
-<<<<<<< HEAD
-    'App\\NotaFiscal' => $baseDir . '/app/Models/NotaFiscal.php',
-    'App\\Pedido' => $baseDir . '/app/Models/Pedido.php',
-    'App\\Preco' => $baseDir . '/app/Models/Preco.php',
-=======
->>>>>>> d1a468de146f8c13a6e4625304f9de87054ce559
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',
     'App\\Providers\\BroadcastServiceProvider' => $baseDir . '/app/Providers/BroadcastServiceProvider.php',

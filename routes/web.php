@@ -66,3 +66,7 @@ Route::delete('/admin/produto/deletar/{id}', 'admin\ProdutoController@deletar')
 });
 
 Auth::routes();
+
+Route::get('/enviarEmail', function (){
+    return view('api.enviar-email');
+});
