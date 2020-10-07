@@ -20,7 +20,7 @@ Route::get('/home', 'HomeController@index')
 Route::get('/', 'HomeController@index')
 ->name('home');
 
-
+//Rotas de Clientes
 Route::get('/admin/clientes', 'admin\ClienteController@index')
 ->name('admin.clientes');
 Route::get('/admin/clientes/adicionar', 'admin\ClienteController@adicionar')
