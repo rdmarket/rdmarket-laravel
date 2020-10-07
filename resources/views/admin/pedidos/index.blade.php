@@ -32,7 +32,7 @@
                     <tr>
                         <th scope="col">Id Pedido</th>
                         <th scope="col">Id Cliente</th>
-                        <th scope="col">Id Formada de Pagamento</th>
+                        <th scope="col">Id Forma de Pagamento</th>
                         <th scope="col">Número do Pedido</th>
                         <th scope="col">Valor total do pedido</th>
                         <th scope="col">Id Status do Pedido</th>
