@@ -6,8 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Produto extends Model
 {
+
+    protected $primaryKey = 'id_produto';
+
     protected $fillable = [
-        'id_produto','id_tipo_produto','ds_produto','data_aquisicao',
+        'id_tipo_produto','ds_produto','data_aquisicao',
     ];
 
     protected $table = 'produto';

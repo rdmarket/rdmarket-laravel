@@ -47,3 +47,17 @@ Route::put('/admin/pedidos/atualizar/{id}', 'admin\PedidoController@atualizar')
 ->name('admin.pedidos.atualizar');
 Route::delete('/admin/pedidos/deletar/{id}', 'admin\PedidoController@deletar')
 ->name('admin.pedidos.deletar');
+
+//Rotas produto
+Route::get('/admin/produto', 'admin\ProdutoController@index')
+->name('admin.produto');
+Route::get('/admin/produto/adicionar', 'admin\ProdutoController@adicionar')
+->name('admin.produto.adicionar');
+Route::post('admin/produto/salvar', 'admin\ProdutoController@salvar')
+->name('admin.produto.salvar');
+Route::get('/admin/produto/editar/{id}', 'admin\ProdutoController@editar')
+->name('admin.produto.editar');
+Route::put('/admin/produto/atualizar/{id}', 'admin\ProdutoController@atualizar')
+->name('admin.produto.atualizar');
+Route::delete('/admin/produto/deletar/{id}', 'admin\ProdutoController@deletar')
+->name('admin.produto.deletar');
