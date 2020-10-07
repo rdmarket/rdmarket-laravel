@@ -1,17 +1,17 @@
 @extends('layout.site')
 
-@section('titulo', 'clientes')
+@section('titulo', 'produtos')
 
 @section('conteudo')
 <div class="container">
 <div class="container">
         <div class="row mt-5 mb-2">
             <div class="col-9">
-                <h3>Lista de Clientes</h3>
+                <h3>Lista de Produto</h3>
             </div>
             <div class="col-3">
                 <a class="btn btn-success"
-                   href="{{ route('admin.clientes.adicionar') }}">
+                   href="{{ route('admin.produto.adicionar') }}">
                     Adicionar
                 </a>
             </div>
@@ -31,9 +31,9 @@
                 <thead>
                     <tr>
                         <th scope="col">Id</th>
-                        <th scope="col">Nome</th>
-                        <th scope="col">CPF</th>
-                        <th scope="col">Data de nascimento</th>
+                        <th scope="col">Tipo Produtp</th>
+                        <th scope="col">Descrião</th>
+                        <th scope="col">Data de aquisição</th>
                         <th scope="col">Ações</th>
                         <th scope="col"></th>
                     </tr>
@@ -41,20 +41,19 @@
                 <tbody>
                     @foreach($itens as $item)
                         <tr>
-                            <td>{{ $item->id_cliente}}</td>
-                            <td>{{ $item->nm_cliente }}</td>
-                            <td>{{ $item->num_cpf }}</td>
-                            <td>{{ \Carbon\Carbon::parse($item->data_nascimento)->format('d/m/Y') }}</td>
+                            <td>{{ $item->id_produto}}</td>
+                            <td>{{ $item->tipo_produto }}</td>
+                            <td>{{ $item->ds_produto }}</td>
+                            <td>{{ \Carbon\Carbon::parse($item->data_aquisicao)->format('d/m/Y') }}</td>
                             <td>
                                 <a class="btn btn-primary"
-                                    href="{{route('admin.clientes.editar', $item->id_cliente)}}">
+                                    href="{{route('admin.produto.editar', $item->id_produto)}}">
                                     Editar</a>
                             </td>
                             <td>
-                                <form action="{{route('admin.clientes.deletar', $item->id_cliente)}}" method="post"> 
+                                <form action="{{route('admin.produto.deletar', $item->id_produto)}}" method="post"> 
                                     @csrf
                                     @method('DELETE')
-                                    <!-- <input type="submit" name="excluir" value="delete" class="btn btn-danger"> -->
                                     <button type="submit" class="btn btn-danger">Deletar</button>
                                 </form>
                             </td>

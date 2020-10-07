@@ -14,9 +14,9 @@ class CreateItemPedidoTable extends Migration
     public function up()
     {
         Schema::create('item_pedido', function (Blueprint $table) {
-            $table->bigInteger('nr_item_pedido');
-            $table->bigInteger('id_pedido');
-            $table->bigInteger('id_produto');
+            $table->bigInteger('nr_item_pedido')->unsigned();
+            $table->bigInteger('id_pedido')->unsigned();
+            $table->bigInteger('id_produto')->unsigned();
             $table->bigInteger('qtd_item_produto');
             $table->integer('cd_status_item_pedido');
             $table->float('vlr_total_item_pedido');

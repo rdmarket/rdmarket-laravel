@@ -5,9 +5,8 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-abstract class BaseController extends Controller
+class BaseController extends Controller
 {
-
     protected $classe;
     protected $view;
 
@@ -85,4 +84,15 @@ abstract class BaseController extends Controller
         return redirect()->route("$this->view");
     }
 
+    public function tratarImagem(Request $req)
+    {
+        $imagem = $req->file('imagem');
+        $num = rand(1111, 9999);
+        $dir = 'img/cursos/';
+        $ext = $imagem->guessClientExtension();
+        $nomeImagem = 'imagem_' . $num . '.' . $ext;
+        $imagem->move($dir, $nomeImagem);
+
+        return $dir . $nomeImagem;
+    }
 }

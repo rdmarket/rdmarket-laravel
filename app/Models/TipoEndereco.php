@@ -1,13 +1,12 @@
 <?php
-
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 class TipoEndereco extends Model
 {
     protected $fillable = [
-        'descricao'
+        'ds_tipo_endereco'
     ];
 
     protected $table = 'tipo_endereco';
