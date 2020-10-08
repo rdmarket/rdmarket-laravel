@@ -14,4 +14,6 @@ class ProdutoController extends BaseController
          $this->view = 'admin.produto';
      
     }
+
+    
 }

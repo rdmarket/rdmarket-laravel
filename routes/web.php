@@ -70,3 +70,8 @@ Auth::routes();
 Route::get('/enviarEmail', function (){
     return view('api.enviar-email');
 });
+
+//Rotas teste 
+
+Route::get('/produtos/listar', 'admin\ProdutoController@index')
+->name('api.produtos.listar');

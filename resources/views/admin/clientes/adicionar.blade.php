@@ -20,7 +20,7 @@
                 enctype="multipart/form-data">
                 @csrf
                 @include('admin.clientes.form')
-                <button type="submit" class="btn btn-success">Salvar</button>
+                <button type="submit" class="btn btn-success" style="background-color: #77d353; border: #77d353">Salvar</button>
             </form>
         </div>
     </div>

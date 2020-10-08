@@ -20,5 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('/enviarEmail','Api\ContatoController@enviarEmail')->name('api.enviarEmail');
 
+Route::get('/produtos/listar', 'Api\ProdutoController@listar')
+->name('api.listar.produto');
 // CRUD Pedidos
 Route::apiResource('pedidos', 'Api\PedidoController');
