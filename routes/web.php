@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Auth;
 
 
 /*
@@ -20,7 +20,8 @@ Route::get('/home', 'HomeController@index')
 Route::get('/', 'HomeController@index')
 ->name('home');
 
-
+Route::group(['middleware'=>'auth'], function (){
+//Rotas de Clientes
 Route::get('/admin/clientes', 'admin\ClienteController@index')
 ->name('admin.clientes');
 Route::get('/admin/clientes/adicionar', 'admin\ClienteController@adicionar')
@@ -33,6 +34,7 @@ Route::put('/admin/clientes/atualizar/{id}', 'admin\ClienteController@atualizar'
 ->name('admin.clientes.atualizar');
 Route::delete('/admin/clientes/deletar/{id}', 'admin\ClienteController@deletar')
 ->name('admin.clientes.deletar');
+
 
 //Rotas de Pedidos
 Route::get('/admin/pedidos', 'admin\PedidoController@index')
@@ -61,3 +63,10 @@ Route::put('/admin/produto/atualizar/{id}', 'admin\ProdutoController@atualizar')
 ->name('admin.produto.atualizar');
 Route::delete('/admin/produto/deletar/{id}', 'admin\ProdutoController@deletar')
 ->name('admin.produto.deletar');
+});
+
+Auth::routes();
+
+Route::get('/enviarEmail', function (){
+    return view('api.enviar-email');
+});

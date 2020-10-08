@@ -42,8 +42,8 @@
                     @foreach($itens as $item)
                         <tr>
                             <td>{{ $item->id_cliente}}</td>
-                            <td>{{ $item->nome }}</td>
-                            <td>{{ $item->cpf }}</td>
+                            <td>{{ $item->nm_cliente }}</td>
+                            <td>{{ $item->num_cpf }}</td>
                             <td>{{ \Carbon\Carbon::parse($item->data_nascimento)->format('d/m/Y') }}</td>
                             <td>
                                 <a class="btn btn-primary"
