@@ -13,7 +13,8 @@ Abstract class BaseController extends Controller
     {
         $dados = $this->classe::all();
 
-        if (is_null($dados)) {
+
+        if (empty($dados->all())) {
             return response()->json('Item não encontrado.', 404);
         }
         
