@@ -9,24 +9,25 @@ Abstract class BaseController extends Controller
 {
     protected $classe;
     
-    public function listar(Request $req)
+    public function index(Request $req)
     {
         $dados = $this->classe::all();
-        
-        if (is_null($dados)) {
+
+
+        if (empty($dados->all())) {
             return response()->json('Item não encontrado.', 404);
         }
         
         return response()->json($dados, 200);
     }
 
-    public function salvar(Request $req)
+    public function store(Request $req)
     {
         $dados = $req->all();
         return response()->json($this->classe::create($dados), 201);
     }
 
-    public function buscar($id)
+    public function show($id)
     {
         $dados = $this->classe::find($id);
 
@@ -37,7 +38,8 @@ Abstract class BaseController extends Controller
         return response()->json($dados, 200);
     }
 
-    public function atualizar(Request $req, $id)
+
+    public function update(Request $req, $id)
     {
         $dados = $req->all();
 
@@ -51,7 +53,7 @@ Abstract class BaseController extends Controller
 
     }
 
-    public function deletar($id)
+    public function destroy($id)
     {
         $item = $this->classe::find($id);
 
