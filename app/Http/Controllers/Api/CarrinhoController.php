@@ -12,12 +12,9 @@ class CarrinhoController extends BaseController
 {
     //
 
-    protected $itensNoCarrinho;
-
     public function __construct()
     {
         $this->classe = Produto::class;
-        $itensNoCarrinho = [];
     }
 
     public function adicionarItemCarrinho(Request $req,$id)
@@ -47,8 +44,9 @@ class CarrinhoController extends BaseController
         }
 
         //aqui também a função do douglas
-        //criarItemPedido
+        //criarItemPedido($req);
 
+        
 
     }
 }
