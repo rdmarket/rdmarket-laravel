@@ -23,7 +23,7 @@
             </div>
             <div class="form-group">
                 <label for="mensagem">Mensagem</label>
-                <input type="textarea" class="form-control" id="mensagem" name="mensagem">
+                <input type="text/area" class="form-control" id="mensagem" name="mensagem">
             </div>
             <button type="submit" class="btn btn-success">Enviar</button>
         </form>

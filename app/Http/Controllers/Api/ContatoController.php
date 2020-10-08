@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class ContatoController extends Controller
+class ContatoController extends BaseController
 {
-    
+
     public function enviarEmail (Request $req)
     {
         if (mail('supermercadord@outlook.com', 
