@@ -5,7 +5,7 @@
 
 @section('conteudo')
     <div class="container">
-        <h3>Adiconar Produto</h3>
+        <h3>Adicionar Produto</h3>
         <div class="row">
             <form action="{{ route('admin.produto.salvar') }}" method="post"
                 enctype="multipart/form-data">
