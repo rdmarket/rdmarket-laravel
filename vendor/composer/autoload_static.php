@@ -508,8 +508,6 @@ class ComposerStaticInit43fbe42db68ff53e7794525df7e39d9c
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
-
-        'App\\FormaPagamento' => __DIR__ . '/../..' . '/app/Models/FormaPagamento.php',
         'App\\Http\\Controllers\\Api\\BaseController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/BaseController.php',
         'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
@@ -517,12 +515,13 @@ class ComposerStaticInit43fbe42db68ff53e7794525df7e39d9c
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
+        'App\\Http\\Controllers\\BaseController' => __DIR__ . '/../..' . '/app/Http/Controllers/BaseController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\admin\\BaseController' => __DIR__ . '/../..' . '/app/Http/Controllers/admin/BaseController.php',
         'App\\Http\\Controllers\\admin\\ClienteController' => __DIR__ . '/../..' . '/app/Http/Controllers/admin/ClienteController.php',
-
         'App\\Http\\Controllers\\admin\\PedidoController' => __DIR__ . '/../..' . '/app/Http/Controllers/admin/PedidoController.php',
+        'App\\Http\\Controllers\\admin\\ProdutoController' => __DIR__ . '/../..' . '/app/Http/Controllers/admin/ProdutoController.php',
         'App\\Http\\Controllers\\api\\ListaController' => __DIR__ . '/../..' . '/app/Http/Controllers/api/ListaController.php',
         'App\\Http\\Controllers\\loginController' => __DIR__ . '/../..' . '/app/Http/Controllers/loginController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
@@ -533,9 +532,6 @@ class ComposerStaticInit43fbe42db68ff53e7794525df7e39d9c
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
-
-        'App\\ItemNota' => __DIR__ . '/../..' . '/app/Models/ItemNota.php',
-        'App\\ItemPedido' => __DIR__ . '/../..' . '/app/Models/ItemPedido.php',
         'App\\Models\\Cartao' => __DIR__ . '/../..' . '/app/Models/Cartao.php',
         'App\\Models\\Cliente' => __DIR__ . '/../..' . '/app/Models/Cliente.php',
         'App\\Models\\Contato' => __DIR__ . '/../..' . '/app/Models/Contato.php',
@@ -555,9 +551,6 @@ class ComposerStaticInit43fbe42db68ff53e7794525df7e39d9c
         'App\\Models\\TipoContato' => __DIR__ . '/../..' . '/app/Models/TipoContato.php',
         'App\\Models\\TipoEndereco' => __DIR__ . '/../..' . '/app/Models/TipoEndereco.php',
         'App\\Models\\TipoProduto' => __DIR__ . '/../..' . '/app/Models/TipoProduto.php',
-        'App\\NotaFiscal' => __DIR__ . '/../..' . '/app/Models/NotaFiscal.php',
-        'App\\Pedido' => __DIR__ . '/../..' . '/app/Models/Pedido.php',
-        'App\\Preco' => __DIR__ . '/../..' . '/app/Models/Preco.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
