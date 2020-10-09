@@ -15,12 +15,6 @@ class ProdutoController extends BaseController
 
     public function listar(Request $req)
     {
-        $dados = $this->classe::all();
-
-        foreach ($dados as $dado) {
-            $dado['imagem'] = url($dado['imagem']);
-        }
-
-        return response()->json($dados, 200);
+       
     }
 }
