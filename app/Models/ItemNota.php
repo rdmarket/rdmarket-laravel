@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class ItemNota extends Model
 {
     protected $fillable = ['id_nf','id_produto','qt_item','vl_unitario'];
+    protected $table = 'item_nota';
 
     public function notaFiscal()
     {
