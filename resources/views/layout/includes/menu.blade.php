@@ -1,3 +1,15 @@
+<style> 
+    .bg-primary {
+        background-color: #c81e21!important;
+    }
+    .navbar-dark .navbar-nav .nav-link {
+    color: #fff;
+    }
+    .navbar-brand {
+        font-weight: bold;
+    }
+</style>
+
 <nav class="navbar navbar-expand-md navbar-dark bg-primary">
     <a class="navbar-brand" href="#">RD Market</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -6,6 +18,9 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             @guest
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('home') }}">Home</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('admin.clientes') }}">Clientes</a>
                 </li>
@@ -18,10 +33,13 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="{{ route('register') }}">{{ __('Registrar') }}</a>
-                </li>
+                </li> -->
             @else
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('home') }}">Home</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('admin.clientes') }}">Clientes</a>
                 </li>

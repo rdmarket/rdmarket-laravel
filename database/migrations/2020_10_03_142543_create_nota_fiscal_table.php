@@ -17,7 +17,7 @@ class CreateNotaFiscalTable extends Migration
             $table->id('id_nf');
             $table->timestamps();
             $table->bigInteger('id_pedido')->unsigned(); 
-            $table->dateTime('dt_emissao');
+            $table->string('dt_emissao');
             $table->float('vl_nota',5,2);
             $table->bigInteger('nr_nf');
             $table->bigInteger('nr_serie');
@@ -31,6 +31,6 @@ class CreateNotaFiscalTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('nota__fiscals');
+        Schema::dropIfExists('nota_fiscal');
     }
 }

@@ -11,7 +11,7 @@
             </div>
             <div class="col-3">
                 <a class="btn btn-success"
-                   href="{{ route('admin.produto.adicionar') }}">
+                   href="{{ route('admin.produto.adicionar') }}" style="background-color: #77d353; border: #77d353">
                     Adicionar
                 </a>
             </div>
@@ -47,14 +47,14 @@
                             <td>{{ \Carbon\Carbon::parse($item->data_aquisicao)->format('d/m/Y') }}</td>
                             <td>
                                 <a class="btn btn-primary"
-                                    href="{{route('admin.produto.editar', $item->id_produto)}}">
+                                    href="{{route('admin.produto.editar', $item->id_produto)}}" style="background-color: #969faa; border: #969faa">
                                     Editar</a>
                             </td>
                             <td>
                                 <form action="{{route('admin.produto.deletar', $item->id_produto)}}" method="post"> 
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">Deletar</button>
+                                    <button type="submit" class="btn btn-danger" style="background-color: #C81E21; border: #C81E21">Deletar</button>
                                 </form>
                             </td>
                         </tr>
