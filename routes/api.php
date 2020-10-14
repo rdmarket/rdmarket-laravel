@@ -24,6 +24,7 @@ Route::post('/enviarEmail','Api\ContatoController@enviarEmail')->name('api.envia
 Route::post('/realizarCompra/{id}','Api\checkout\CheckoutController@realizarCompra')->name('api.realizarCompra');
 Route::get('/devolverDadosCartao/{id}','Api\checkout\CheckoutController@devolverDadosCartao')->name('api.devolverDadosCartao');
 
+
 //rota produtos
 Route::get('/produtos/listarPorTipo/{id_tipo_produto}', 'Api\ProdutoController@listarPorTipo')
 ->name('api.produtos.listarPorTipo');
@@ -32,9 +33,8 @@ Route::get('/produtos/listarNovidades', 'Api\ProdutoController@listarNovidades')
 Route::get('/produtos/listarDescontos', 'Api\ProdutoController@listarDescontos')
 ->name('api.produtos.listarDescontos');
 Route::apiResource('produtos', 'Api\ProdutoController');
-
-// rota Pedidos
+// Route::get('/produtos/listar', 'Api\ProdutoController@listar')
+// ->name('api.listar.produto');
+// CRUD Pedidos
 Route::apiResource('pedidos', 'Api\PedidoController');
-
-
 
