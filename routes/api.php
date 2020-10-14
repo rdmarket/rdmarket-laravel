@@ -29,9 +29,3 @@ Route::get('/produtos/listar', 'Api\ProdutoController@listar')
 ->name('api.listar.produto');
 // CRUD Pedidos
 Route::apiResource('pedidos', 'Api\PedidoController');
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> a7b87561ede0aca95c2cee21d43be109a71327f2
