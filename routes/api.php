@@ -22,4 +22,3 @@ Route::post('/enviarEmail','Api\ContatoController@enviarEmail')->name('api.envia
 
 // CRUD Pedidos
 Route::apiResource('pedidos', 'Api\PedidoController');
-
