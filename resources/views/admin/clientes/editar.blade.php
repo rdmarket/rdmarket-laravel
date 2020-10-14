@@ -11,7 +11,7 @@
                 @csrf
                 <input type="hidden" name="_method" value="put">      <!-- Esse input não é visível para o usuário -- Serve para tratar o formulário post para que ele possa fazer o put, que ´e atualizar -->
                 @include('admin.clientes.form')
-                <button type="submit" class="btn btn-success">Salvar</button>
+                <button type="submit" class="btn btn-success" style="background-color: #77d353; border: #77d353">Salvar</button>
             </form>
         </div>
     </div>
