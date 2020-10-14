@@ -29,3 +29,7 @@ Route::get('/produtos/listar', 'Api\ProdutoController@listar')
 ->name('api.listar.produto');
 // CRUD Pedidos
 Route::apiResource('pedidos', 'Api\PedidoController');
+
+
+//rota endereco
+Route::apiResource('endereco', 'Api\EnderecoController');

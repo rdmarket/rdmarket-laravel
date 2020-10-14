@@ -9,7 +9,7 @@ Abstract class BaseController extends Controller
 {
     protected $classe;
     
-    public function index(Request $req)
+    public function index()
     {
         $dados = $this->classe::all();
 
