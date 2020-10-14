@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\api;
+namespace App\Http\Controllers\admin\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class ListaController extends Controller
+class CartaoController extends Controller
 {
     //
 }

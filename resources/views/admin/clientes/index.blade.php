@@ -33,7 +33,8 @@
                         <th scope="col">Id</th>
                         <th scope="col">Nome</th>
                         <th scope="col">CPF</th>
-                        <th scope="col">Data de nascimento</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Telefone</th>
                         <th scope="col">Ações</th>
                     </tr>
                 </thead>
@@ -42,9 +43,9 @@
                         <tr>
                             <td>{{ $item->id_cliente}}</td>
                             <td>{{ $item->nm_cliente }}</td>
-                            <td>{{ $item->num_cpf }}</td>
-                            <td>{{ \Carbon\Carbon::parse($item->data_nascimento)->format('d/m/Y') }}</td>
-                            <td>
+                            <td>{{ $item->num_cpf }}</td>   
+                            <td>{{ $item->ds_tipo_contato }}</td> 
+                            <td>{{ $item->ds_tipo_contato }}</td>                          <td>
                                 <a class="btn btn-primary"
                                     href="{{route('admin.clientes.editar', $item->id_cliente)}}" style="background-color: #969faa; border: #969faa">
                                     Editar</a>

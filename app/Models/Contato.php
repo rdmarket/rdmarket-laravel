@@ -6,17 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Contato extends Model
 {
-    protected $fillable = ['id_cliente','id_tipo_contato', 'ds_tipo_contato'];
+    protected $fillable = ['id_cliente', 'ds_email', 'num_celular', 'num_fixo'];
 
     protected $table = 'contato';
 
     public function cliente()
     {
         $this->belongsTo('App\Models\Cliente');
-    }
-    
-    public function tipoContato()
-    {
-        return $this->hasOne('App\Models\TipoContato');
     }
 }

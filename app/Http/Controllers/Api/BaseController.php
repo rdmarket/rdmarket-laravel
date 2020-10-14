@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-Abstract class BaseController extends Controller
+abstract class BaseController extends Controller
 {
     protected $classe;
     

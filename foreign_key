@@ -5,8 +5,6 @@ ALTER TABLE cartao ADD CONSTRAINT FK_cartao_tipo FOREIGN KEY (id_tipo_cartao) RE
 ###constraint contato###
 ALTER TABLE contato ADD CONSTRAINT FK_contato_cliente FOREIGN KEY (id_cliente) REFERENCES cliente(id_cliente);
 
-ALTER TABLE contato ADD CONSTRAINT FK_contato_tipo FOREIGN KEY (id_tipo_contato) REFERENCES tipo_contato(id_tipo_contato);
-
 ###constraint endereco_cliente###
 ALTER TABLE endereco_cliente ADD CONSTRAINT FK_endereco_cliente_cliente FOREIGN KEY (id_cliente) REFERENCES cliente(id_cliente);
 
