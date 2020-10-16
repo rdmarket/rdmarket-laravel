@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTipoProdutoTable extends Migration
+class CreateCategoriaProdutoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateTipoProdutoTable extends Migration
      */
     public function up()
     {
-        Schema::create('tipo_produto', function (Blueprint $table) {
-            $table->id('id_tipo_produto');
-            $table->string('ds_tipo_produto');
+        Schema::create('categoria_produto', function (Blueprint $table) {
+            $table->integer('id_categoria')->primary();
+            $table->string('ds_categoria');
             $table->timestamps();
         });
     }

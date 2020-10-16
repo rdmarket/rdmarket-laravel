@@ -5,8 +5,6 @@ ALTER TABLE cartao ADD CONSTRAINT FK_cartao_tipo FOREIGN KEY (id_tipo_cartao) RE
 ###constraint contato###
 ALTER TABLE contato ADD CONSTRAINT FK_contato_cliente FOREIGN KEY (id_cliente) REFERENCES cliente(id_cliente);
 
-ALTER TABLE contato ADD CONSTRAINT FK_contato_tipo FOREIGN KEY (id_tipo_contato) REFERENCES tipo_contato(id_tipo_contato);
-
 ###constraint endereco_cliente###
 ALTER TABLE endereco_cliente ADD CONSTRAINT FK_endereco_cliente_cliente FOREIGN KEY (id_cliente) REFERENCES cliente(id_cliente);
 
@@ -19,10 +17,14 @@ ALTER TABLE endereco ADD CONSTRAINT FK_endereco_tipo_endereco FOREIGN KEY (id_ti
 ###constraint pedido###
 ALTER TABLE pedido ADD CONSTRAINT FK_pedido_cliente FOREIGN KEY (id_cliente) REFERENCES cliente(id_cliente);
 
+
+###constraint forma_pagamento###
 ALTER TABLE pedido ADD CONSTRAINT FK_pedido_forma_pagamento FOREIGN KEY (id_forma_pagamento) REFERENCES forma_pagamento(id_forma_pagamento);
 
+###constraint id_status_pedido###
 ALTER TABLE pedido ADD CONSTRAINT FK_pedido_status_pedido FOREIGN KEY (id_status_pedido) REFERENCES status_pedido(id_status_pedido);
 
+##constraint id_endereco##
 ALTER TABLE pedido ADD CONSTRAINT FK_pedido_endereco FOREIGN KEY (id_endereco) REFERENCES endereco(id_endereco);
 
 ###constraint item_pedido###
@@ -37,7 +39,7 @@ ALTER TABLE nota_fiscal ADD CONSTRAINT FK_nota_fiscal_pedido FOREIGN KEY (id_ped
 ALTER TABLE item_nota ADD CONSTRAINT FK_item_nota FOREIGN KEY (id_nf) REFERENCES nota_fiscal(id_nf);
 
 ###constraint produto###
-ALTER TABLE produto ADD CONSTRAINT FK_produto_tipo_produto FOREIGN KEY (id_tipo_produto) REFERENCES tipo_produto(id_tipo_produto);
+ALTER TABLE produto ADD CONSTRAINT FK_produto_categoria FOREIGN KEY (id_categoria) REFERENCES categoria_produto(id_categoria);
 
 ###constraint estoque###
 ALTER TABLE estoque ADD CONSTRAINT FK_estoque_produto FOREIGN KEY (id_produto) REFERENCES produto(id_produto);

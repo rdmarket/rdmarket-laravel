@@ -15,5 +15,14 @@ class ProdutoController extends BaseController
      
     }
 
-    
+    public function listarPorTipo (Request $req, $id_categoria)
+    {
+        $itens = $this->classe::
+        ->join('categoria_produto')
+
+
+        // ->where('id_categoria', "$id_categoria");
+        // $mensagem = $req->session()->get('mensagem');
+        return view("$this->view.index", compact('itens', 'mensagem'));
+    }  
 }

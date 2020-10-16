@@ -25,7 +25,7 @@
                     <a class="nav-link" href="{{ route('admin.clientes') }}">Clientes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('admin.produto') }}">Produtos</a>
+                    <a class="nav-link" href="{{ route('admin.produto')}}">Produtos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('admin.pedidos') }}">Pedidos</a>
@@ -44,7 +44,7 @@
                     <a class="nav-link" href="{{ route('admin.clientes') }}">Clientes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('admin.produto') }}">Produtos</a>
+                    <a class="nav-link" href="{{ route('admin.produto')}}">Produtos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('admin.pedidos') }}">Pedidos</a>

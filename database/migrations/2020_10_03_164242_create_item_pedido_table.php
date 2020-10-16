@@ -14,7 +14,7 @@ class CreateItemPedidoTable extends Migration
     public function up()
     {
         Schema::create('item_pedido', function (Blueprint $table) {
-            $table->bigInteger('nr_item_pedido')->unsigned();
+            $table->bigInteger('nr_item_pedido')->unsigned(); 
             $table->bigInteger('id_pedido')->unsigned();
             $table->bigInteger('id_produto')->unsigned();
             $table->bigInteger('qtd_item_produto');
@@ -22,7 +22,6 @@ class CreateItemPedidoTable extends Migration
             $table->float('vlr_total_item_pedido');
             $table->date('data_item_pedido');
             $table->timestamps();
-            $table->primary(['nr_item_pedido','id_pedido']);
         });
     }
     
