@@ -38,17 +38,22 @@ INSERT into `forma_pagamento` (
 INSERT INTO `status_pedido` (
     id_status_pedido,
     desc_status_pedido)
-    values (1, 'Em andamento');
+    values (1, 'Aguardando pagamento');
+
+INSERT INTO `status_pedido` (
+    id_status_pedido,
+    desc_status_pedido)
+    values (2, 'Em andamento');
     
     INSERT INTO `status_pedido` (
     id_status_pedido,
     desc_status_pedido)
-    values (2, 'Entregue');
+    values (3, 'Entregue');
     
     INSERT INTO `status_pedido` (
     id_status_pedido,
     desc_status_pedido)
-    values (3, 'Cancelado');
+    values (4, 'Cancelado');
     
 
 
