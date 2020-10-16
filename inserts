@@ -1,0 +1,81 @@
+### categoria_produtos ###
+INSERT INTO `categoria_produto` (
+    id_categoria,
+    ds_categoria)
+    VALUES (1, 'Alimentos');
+    
+    INSERT INTO `categoria_produto` (
+    id_categoria,
+    ds_categoria)
+    VALUES (2, 'Bebidas');
+    
+    INSERT INTO `categoria_produto` (
+    id_categoria,
+    ds_categoria)
+    VALUES (3, 'Higiene');
+    
+    INSERT INTO `categoria_produto` (
+    id_categoria,
+    ds_categoria)
+    VALUES (4, 'Limpeza');
+
+
+
+### forma_pagamento ###
+INSERT into `forma_pagamento` (
+    id_forma_pagamento,
+    ds_forma_pagamento)
+    VALUES (1, 'Débito');
+    
+    INSERT into `forma_pagamento` (
+    id_forma_pagamento,
+    ds_forma_pagamento)
+    VALUES (2, 'Crédito');
+
+
+
+### status_pedido ###
+INSERT INTO `status_pedido` (
+    id_status_pedido,
+    desc_status_pedido)
+    values (1, 'Em andamento');
+    
+    INSERT INTO `status_pedido` (
+    id_status_pedido,
+    desc_status_pedido)
+    values (2, 'Entregue');
+    
+    INSERT INTO `status_pedido` (
+    id_status_pedido,
+    desc_status_pedido)
+    values (3, 'Cancelado');
+    
+
+
+### tipo_cartao ###
+INSERT INTO `tipo_cartao` (
+    id_tipo_cartao,
+    ds_tipo_cartao)
+    VALUES (1, 'Débito');
+
+INSERT INTO `tipo_cartao` (
+    id_tipo_cartao,
+    ds_tipo_cartao)
+    VALUES (2, 'Crédito');
+
+
+### tipo_endereco ###
+INSERT INTO `tipo_endereco` (
+    id_tipo_endereco,
+    ds_tipo_endereco)
+    values (1, 'Residencial');
+    
+    INSERT INTO `tipo_endereco` (
+    id_tipo_endereco,
+    ds_tipo_endereco)
+    values (2, 'Comercial');
+    
+    INSERT INTO `tipo_endereco` (
+    id_tipo_endereco,
+    ds_tipo_endereco)
+    values (3, 'Cobrança');
