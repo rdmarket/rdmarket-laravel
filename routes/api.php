@@ -21,7 +21,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('/enviarEmail','Api\ContatoController@enviarEmail')->name('api.enviarEmail');
 
 //rota checkout 
-Route::post('/realizarCompra/{id}','Api\checkout\CheckoutController@realizarCompra')->name('api.realizarCompra');
+Route::get('/realizarCompra/{id}','Api\checkout\CheckoutController@realizarCompra')->name('api.realizarCompra');
 Route::get('/devolverDadosCartao/{id}','Api\checkout\CheckoutController@devolverDadosCartao')->name('api.devolverDadosCartao');
 
 
@@ -37,6 +37,8 @@ Route::apiResource('produtos', 'Api\ProdutoController');
 // ->name('api.listar.produto');
 
 // CRUD Pedidos
+Route::get('pedidosPorCliente/{id_cliente}','Api\PedidoController@pedidosPorCliente');
+Route::post('pedido/gerarPedido','Api\PedidoController@gerarPedido');
 Route::apiResource('pedidos', 'Api\PedidoController');
 
 //rota endereco
@@ -46,4 +48,7 @@ Route::get('/endereco/listarCliente/{id}','Api\EnderecoController@listarCliente'
 ->name('api.endereco.listarCliente');
 Route::apiResource('endereco', 'Api\EnderecoController');
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> eca39c14b0f93e99910d0bf0ae4c13bd4dfea9f4

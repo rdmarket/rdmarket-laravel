@@ -14,7 +14,7 @@ class CreateTipoEnderecoTable extends Migration
     public function up()
     {
         Schema::create('tipo_endereco', function (Blueprint $table) {
-            $table->id('id_tipo_endereco');
+            $table->integer('id_tipo_endereco')->primary();
             $table->string('ds_tipo_endereco');
             $table->timestamps();
         });
