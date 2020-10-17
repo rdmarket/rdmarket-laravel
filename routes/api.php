@@ -35,12 +35,10 @@ Route::get('/produtos/listarDescontos', 'Api\ProdutoController@listarDescontos')
 Route::apiResource('produtos', 'Api\ProdutoController');
 // Route::get('/produtos/listar', 'Api\ProdutoController@listar')
 // ->name('api.listar.produto');
+
 // CRUD Pedidos
 Route::apiResource('pedidos', 'Api\PedidoController');
 
-<<<<<<< HEAD
-
 //rota endereco
 Route::apiResource('endereco', 'Api\EnderecoController');
-=======
->>>>>>> 9a76f06f2bfa78a64ce7be571675145ba41817cb
+

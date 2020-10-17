@@ -40,4 +40,6 @@ class EnderecoController extends BaseController
 
         return response()->json($dados, 200);
     }
+
+    
 }
