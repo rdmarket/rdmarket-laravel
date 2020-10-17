@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\admin;
 
 use App\Models\Produto;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class ProdutoController extends BaseController
@@ -15,14 +14,11 @@ class ProdutoController extends BaseController
      
     }
 
-    public function listarPorTipo (Request $req, $id_categoria)
+    public function index (Request $req)
     {
-        $itens = $this->classe::
-        ->join('categoria_produto')
-
-
-        // ->where('id_categoria', "$id_categoria");
-        // $mensagem = $req->session()->get('mensagem');
+        $itens = $this->classe::join('categoria_produto', 'produto.id_categoria', '=', 'categoria_produto.id_categoria')
+                                ->select ('produto.*','categoria_produto.ds_categoria')->get();
+        $mensagem = $req->session()->get('mensagem');
         return view("$this->view.index", compact('itens', 'mensagem'));
-    }  
+    }
 }

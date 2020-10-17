@@ -84,3 +84,5 @@ INSERT INTO `tipo_endereco` (
     id_tipo_endereco,
     ds_tipo_endereco)
     values (3, 'Cobrança');
+
+

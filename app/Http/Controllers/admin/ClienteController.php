@@ -3,9 +3,6 @@
 namespace App\Http\Controllers\admin;
 
 use App\Models\Cliente;
-use App\Models\Contato;
-use App\Models\TipoContato;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -21,13 +18,8 @@ class ClienteController extends BaseController
    public function index(Request $req)
     {   
        $itens = $this->classe::join('contato', 'cliente.id_cliente', '=', 'contato.id_cliente')
-         //Vai juntar as informações da tabela de contato onde o id_cliente da tabela cliente for igual ao id_cliente da tabela contato;
-         ->select('cliente.*', 'contato.ds_tipo_contato')
-         // ->join('tipo_contato', 'contato.id_tipo_contato', '=', 'tipo_contato.id_tipo_contato')
-         // ->select('cliente.*', 'tipo_contato.id_tipo_contato', 'contato.ds_tipo_contato')
-         ->get();
-
-         // dd($itens);
+                           ->select('cliente.id_cliente','cliente.nm_cliente','cliente.num_cpf',
+                                    'contato.ds_email','contato.num_fixo')->get();
          
         $mensagem = $req->session()->get('mensagem');
         return view("$this->view.index", compact('itens', 'mensagem'));

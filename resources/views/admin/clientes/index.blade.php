@@ -44,8 +44,8 @@
                             <td>{{ $item->id_cliente}}</td>
                             <td>{{ $item->nm_cliente }}</td>
                             <td>{{ $item->num_cpf }}</td>   
-                            <td>{{ $item->ds_tipo_contato }}</td> 
-                            <td>{{ $item->ds_tipo_contato }}</td>                          <td>
+                            <td>{{ $item->ds_email}}</td> 
+                            <td>{{ $item->num_fixo }}</td>                          <td>
                                 <a class="btn btn-primary"
                                     href="{{route('admin.clientes.editar', $item->id_cliente)}}" style="background-color: #969faa; border: #969faa">
                                     Editar</a>

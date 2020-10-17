@@ -31,7 +31,7 @@
                 <thead>
                     <tr>
                         <th scope="col">Id</th>
-                        <th scope="col">Tipo Produto</th>
+                        <th scope="col">Categoria</th>
                         <th scope="col">Descrição</th>
                         <th scope="col">Data de aquisição</th>
                         <th scope="col">Ações</th>
@@ -42,7 +42,7 @@
                     @foreach($itens as $item)
                         <tr>
                             <td>{{ $item->id_produto}}</td>
-                            <td>{{ $item->id_tipo_produto}}</td>
+                            <td>{{ $item->ds_categoria}}</td>
                             <td>{{ $item->ds_produto }}</td>
                             <td>{{ \Carbon\Carbon::parse($item->data_aquisicao)->format('d/m/Y') }}</td>
                             <td>
