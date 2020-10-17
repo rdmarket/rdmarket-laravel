@@ -40,5 +40,10 @@ Route::apiResource('produtos', 'Api\ProdutoController');
 Route::apiResource('pedidos', 'Api\PedidoController');
 
 //rota endereco
+Route::get('/endereco/listarTipo/{id}','Api\EnderecoController@listarTipo')
+->name('api.endereco.listarTipo');
+Route::get('/endereco/listarCliente/{id}','Api\EnderecoController@listarCliente')
+->name('api.endereco.listarCliente');
 Route::apiResource('endereco', 'Api\EnderecoController');
+
 
