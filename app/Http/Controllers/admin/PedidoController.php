@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\admin;
 use App\Models\Pedido;
+use App\Models\StatusPedido;
 use Illuminate\Http\Request;
 
 class PedidoController extends BaseController
@@ -25,4 +26,11 @@ class PedidoController extends BaseController
       $mensagem = $req->session()->get('mensagem');
       return view("$this->view.index", compact('itens', 'mensagem'));
    }
+
+   public function editar($id)
+    {
+        $item = $this->classe::find($id);
+        $opcoes = StatusPedido::all();
+        return view("$this->view.editar", compact('item','opcoes'));
+    }
 }

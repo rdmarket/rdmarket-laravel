@@ -7,6 +7,10 @@
     <input type="text" class="form-control" id="ds_produto" name="ds_produto" value="{{$item->ds_produto ?? ''}}">
 </div>
 <div class="form-group">
-    <label for="id_categoria">Tipo do produto</label>
-    <input type="text" class="form-control" id="id_categoria" name="id_categoria" value="{{$item->id_categoria ?? ''}}">
+    <label for="id-categoria">Status do Pedido</label>
+    <select name="id_categoria" class="form-control" id="id-categoria">Categoria
+        @foreach ($opcoes as $opcao)
+            <option value="{{$opcao->id_categoria}}" {{$opcao->id_categoria == $item->id_categoria ? 'selected':''}}>{{$opcao->ds_categoria}}</option>
+        @endforeach
+    </select>
 </div>
