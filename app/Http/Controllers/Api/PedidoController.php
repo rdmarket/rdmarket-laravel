@@ -61,8 +61,8 @@ class PedidoController extends BaseController
         $dados = Pedido::join('cliente', 'pedido.id_cliente', '=', 'cliente.id_cliente')
         ->join('status_pedido', 'pedido.id_status_pedido', '=', 'status_pedido.id_status_pedido')
         ->where('pedido.id_pedido','=',$pedido->id_pedido)
-        ->select('pedido.id_pedido','pedido.nr_pedido','pedido.data_pedido',
-            'status_pedido.desc_status_pedido','pedido.qtd_total_produtos')->get();
+        ->select('pedido.id_pedido','pedido.nr_pedido','pedido.vlr_total_pedido',
+                'pedido.qtd_total_produtos','pedido.data_pedido','status_pedido.desc_status_pedido')->get();
 
         return response()->json($dados, 200);
     }
@@ -72,8 +72,8 @@ class PedidoController extends BaseController
         $dados = Pedido::join('cliente', 'pedido.id_cliente', '=', 'cliente.id_cliente')
         ->join('status_pedido', 'pedido.id_status_pedido', '=', 'status_pedido.id_status_pedido')
         ->where('pedido.id_pedido','=',$id)
-        ->select('pedido.id_pedido','pedido.nr_pedido','pedido.data_pedido',
-            'status_pedido.desc_status_pedido','pedido.qtd_total_produtos')->get();
+        ->select('pedido.id_pedido','pedido.nr_pedido','pedido.vlr_total_pedido',
+                'pedido.qtd_total_produtos','pedido.data_pedido','status_pedido.desc_status_pedido')->get();
 
         if (empty($dados->all())) {
             return response()->json('Pedido nao encontrado', 404);
@@ -87,8 +87,8 @@ class PedidoController extends BaseController
         $dados = Pedido::join('cliente', 'pedido.id_cliente', '=', 'cliente.id_cliente')
         ->join('status_pedido', 'pedido.id_status_pedido', '=', 'status_pedido.id_status_pedido')
         ->where('pedido.id_cliente','=',$id)
-        ->select('pedido.id_pedido','pedido.nr_pedido','pedido.data_pedido',
-            'status_pedido.desc_status_pedido','pedido.qtd_total_produtos')->get();
+        ->select('pedido.id_pedido','pedido.nr_pedido','pedido.vlr_total_pedido',
+                'pedido.qtd_total_produtos','pedido.data_pedido','status_pedido.desc_status_pedido')->get();
 
         if (empty($dados->all())) {
             return response()->json('Cliente nao encontrado', 404);
