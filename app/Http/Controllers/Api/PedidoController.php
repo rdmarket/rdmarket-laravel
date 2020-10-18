@@ -82,7 +82,7 @@ class PedidoController extends BaseController
         return response()->json($dados, 200);
     }
 
-    public function pedidosPorCliente($id)
+    public function listarPorCliente($id)
     {
         $dados = Pedido::join('cliente', 'pedido.id_cliente', '=', 'cliente.id_cliente')
         ->join('status_pedido', 'pedido.id_status_pedido', '=', 'status_pedido.id_status_pedido')
