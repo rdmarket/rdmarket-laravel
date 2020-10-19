@@ -37,9 +37,9 @@ class ProdutoController extends BaseController
 
     public function editar($id)
     {
-        $opcoes = CategoriaProduto::all();
+        $categorias = CategoriaProduto::all();
         $item = $this->classe::find($id);
-        return view("$this->view.editar", compact('item', 'opcoes'));
+        return view("$this->view.editar", compact('item', 'categorias'));
 
     }
 }
