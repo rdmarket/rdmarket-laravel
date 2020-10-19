@@ -84,3 +84,45 @@ INSERT INTO `tipo_endereco` (
     id_tipo_endereco,
     ds_tipo_endereco)
     values (3, 'Cobrança');
+
+## endereco ##
+
+INSERT INTO `endereco` (`id_endereco`, `id_tipo_endereco`, `num_cep`, `nm_rua`, `num_endereco`, `ds_complemento`, `nm_bairro`, `nm_cidade`, `nm_estado`, `created_at`, `updated_at`) VALUES
+(1, 1, '06240155', 'Rua João de Souza', '176', 'Vila', 'Munhoz Junior', 'Osasco', 'SP', NULL, NULL);
+
+## produto ##
+INSERT INTO `produto` (`id_produto`, `id_categoria`, `ds_produto`, `data_aquisicao`, `created_at`, `updated_at`) VALUES
+(1, 1, 'Arroz', '2020-10-01', '2020-10-17 16:37:12', '2020-10-17 20:46:48'),
+(2, 1, 'Feijão', '2020-10-01', '2020-10-17 16:37:43', '2020-10-17 16:37:43'),
+(3, 2, 'Água Mineral', '2020-10-01', '2020-10-17 16:38:15', '2020-10-17 16:38:15'),
+(4, 2, 'Ribeirão Colorado', '2020-10-10', '2020-10-17 20:37:07', '2020-10-17 20:37:07');
+
+## contato ##
+INSERT INTO `contato` (`id_contato`, `id_cliente`, `ds_email`, `num_celular`, `num_fixo`, `created_at`, `updated_at`) VALUES
+(1, 1, 'douglas@douglas.com', '994884192', '34497549', NULL, NULL);
+
+## cliente ##
+INSERT INTO `cliente` (`id_cliente`, `nm_cliente`, `num_cpf`, `data_nascimento`, `vlr_senha`, `created_at`, `updated_at`) VALUES
+(1, 'Douglas', '43659919810', '2020-10-01', '$2y$10$wkZVeN9jpII8l1aC7youMOhV00cyI3YeudNxULrSV8d2taHtftpze', '2020-10-17 16:51:20', '2020-10-17 16:51:20');
+
+## item_pedido ##
+INSERT INTO `item_pedido` (`nr_item_pedido`, `id_pedido`, `id_produto`, `qtd_item_produto`, `cd_status_item_pedido`, `vlr_total_item_pedido`, `data_item_pedido`, `created_at`, `updated_at`) VALUES
+(56766, 1, 1, 2, 1, 100.00, '2020-10-17', '2020-10-17 17:02:27', '2020-10-17 17:02:27'),
+(12190, 1, 2, 4, 1, 400.00, '2020-10-17', '2020-10-17 17:02:27', '2020-10-17 17:02:27'),
+(31354, 1, 3, 10, 1, 30000.00, '2020-10-17', '2020-10-17 17:02:27', '2020-10-17 17:02:27'),
+(8246, 2, 1, 2, 1, 100.00, '2020-10-17', '2020-10-17 17:03:57', '2020-10-17 17:03:57'),
+(85543, 2, 2, 4, 1, 400.00, '2020-10-17', '2020-10-17 17:03:57', '2020-10-17 17:03:57'),
+(700, 2, 3, 10, 1, 30000.00, '2020-10-17', '2020-10-17 17:03:57', '2020-10-17 17:03:57'),
+(53587, 3, 1, 2, 1, 100.00, '2020-10-17', '2020-10-17 17:04:37', '2020-10-17 17:04:37'),
+(56588, 3, 2, 4, 1, 400.00, '2020-10-17', '2020-10-17 17:04:37', '2020-10-17 17:04:37'),
+(1251, 3, 3, 10, 1, 30000.00, '2020-10-17', '2020-10-17 17:04:37', '2020-10-17 17:04:37');
+
+## pedido ##
+INSERT INTO `pedido` (`id_pedido`, `id_cliente`, `id_forma_pagamento`, `nr_pedido`, `qtd_total_produtos`, `vlr_total_pedido`, `id_status_pedido`, `id_endereco`, `data_pedido`, `nr_parcelas`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, '53880', 16, 30500.00, 2, 1, '2020-10-17', 3, '2020-10-17 17:02:27', '2020-10-17 20:44:23'),
+(2, 1, 1, '73535', 16, 30500.00, 2, 1, '2020-10-17', 3, '2020-10-17 17:03:57', '2020-10-17 20:29:00'),
+(3, 1, 1, '43986', 16, 30500.00, 1, 1, '2020-10-17', 3, '2020-10-17 17:04:37', '2020-10-17 17:04:37');
+
+## user ##
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Douglas', 'douglas@douglas.com', NULL, '$2y$10$Cq8Spd5r5YF7zS/UhWwGDulUlWed9DaTOsqxW.F/EVQi/LogEI1q.', NULL, '2020-10-17 16:23:45', '2020-10-17 16:23:45');

@@ -46,7 +46,6 @@ class BaseController extends Controller
     public function editar($id)
     {
         $item = $this->classe::find($id);
-
         return view("$this->view.editar", compact('item'));
     }
 

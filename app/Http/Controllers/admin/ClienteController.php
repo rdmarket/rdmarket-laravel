@@ -3,9 +3,6 @@
 namespace App\Http\Controllers\admin;
 
 use App\Models\Cliente;
-use App\Models\Contato;
-use App\Models\TipoContato;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 

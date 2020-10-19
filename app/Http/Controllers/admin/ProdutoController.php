@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\Models\Produto;
 use App\Models\CategoriaProduto;
+use App\Models\Produto;
 use App\Http\Controllers\Controller;
+
 use Illuminate\Http\Request;
 
 class ProdutoController extends BaseController
@@ -32,5 +33,13 @@ class ProdutoController extends BaseController
         $categorias = CategoriaProduto::all();
         
         return view("$this->view.adicionar", compact('categorias'));
+    }
+
+    public function editar($id)
+    {
+        $opcoes = CategoriaProduto::all();
+        $item = $this->classe::find($id);
+        return view("$this->view.editar", compact('item', 'opcoes'));
+
     }
 }

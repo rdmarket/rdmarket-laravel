@@ -35,11 +35,15 @@ Route::get('/produtos/listarDescontos', 'Api\ProdutoController@listarDescontos')
 Route::apiResource('produtos', 'Api\ProdutoController');
 // Route::get('/produtos/listar', 'Api\ProdutoController@listar')
 // ->name('api.listar.produto');
-// CRUD Pedidos
-Route::get('pedidosPorCliente/{id_cliente}','Api\PedidoController@pedidosPorCliente');
-Route::post('pedido/gerarPedido','Api\PedidoController@gerarPedido');
+
+// Pedidos
+Route::get('pedidos/listarPorCliente/{id_cliente}','Api\PedidoController@listarPorCliente');
+Route::post('pedidos/gerarPedido','Api\PedidoController@gerarPedido');
 Route::apiResource('pedidos', 'Api\PedidoController');
 
 //rota endereco
+Route::get('/endereco/listarTipo/{id}','Api\EnderecoController@listarTipo')
+->name('api.endereco.listarTipo');
+Route::get('/endereco/listarCliente/{id}','Api\EnderecoController@listarCliente')
+->name('api.endereco.listarCliente');
 Route::apiResource('endereco', 'Api\EnderecoController');
-
