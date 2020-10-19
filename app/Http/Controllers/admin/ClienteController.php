@@ -20,14 +20,12 @@ class ClienteController extends BaseController
 
    public function index(Request $req)
     {   
-       $itens = $this->classe::join('contato', 'cliente.id_cliente', '=', 'contato.id_cliente')
-         //Vai juntar as informações da tabela de contato onde o id_cliente da tabela cliente for igual ao id_cliente da tabela contato;
-         ->select('cliente.*', 'contato.ds_tipo_contato')
-         // ->join('tipo_contato', 'contato.id_tipo_contato', '=', 'tipo_contato.id_tipo_contato')
-         // ->select('cliente.*', 'tipo_contato.id_tipo_contato', 'contato.ds_tipo_contato')
-         ->get();
-
-         // dd($itens);
+        $itens = $this->classe::
+        join('contato', 'cliente.id_cliente', '=', 'contato.id_cliente')
+        ->join('endereco_cliente', 'cliente.id_cliente', '=', 'endereco_cliente.id_cliente')
+        ->join('endereco', 'endereco_cliente.id_endereco', '=', 'endereco.id_endereco')
+        ->select('cliente.*', 'contato.*', 'endereco.*')
+        ->get();
          
         $mensagem = $req->session()->get('mensagem');
         return view("$this->view.index", compact('itens', 'mensagem'));

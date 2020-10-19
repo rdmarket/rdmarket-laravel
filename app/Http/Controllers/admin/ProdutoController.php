@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Models\Produto;
+use App\Models\CategoriaProduto;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -12,17 +13,24 @@ class ProdutoController extends BaseController
     {
          $this->classe = Produto::class;
          $this->view = 'admin.produto';
-     
     }
 
-    public function listarPorTipo (Request $req, $id_categoria)
-    {
-        $itens = $this->classe::
-        ->join('categoria_produto')
+    public function index(Request $req)
+    {   
+        $itens = $this->classe::join('preco', 'produto.id_produto', '=', 'preco.id_produto')
+        ->join('categoria_produto', 'produto.id_categoria', '=', 'categoria_produto.id_categoria')
+        ->join('estoque', 'produto.id_produto', '=', 'estoque.id_produto')
+        ->select('produto.*', 'preco.*', 'categoria_produto.*', 'estoque.*')
+        ->get();
 
-
-        // ->where('id_categoria', "$id_categoria");
-        // $mensagem = $req->session()->get('mensagem');
+        $mensagem = $req->session()->get('mensagem');
         return view("$this->view.index", compact('itens', 'mensagem'));
-    }  
+    }
+
+    public function adicionar()
+    {
+        $categorias = CategoriaProduto::all();
+        
+        return view("$this->view.adicionar", compact('categorias'));
+    }
 }

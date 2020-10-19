@@ -6,7 +6,17 @@
     <label for="ds_produto">Descrição do produto</label>
     <input type="text" class="form-control" id="ds_produto" name="ds_produto" value="{{$item->ds_produto ?? ''}}">
 </div>
+<!-- <div class="form-group">
+    <label for="id_categoria">Categoria</label>
+    <input type="text" class="form-control" id="id_categoria" name="id_categoria" value="{{$item->id_categoria ?? ''}}">
+</div> -->
+
 <div class="form-group">
-    <label for="id_tipo_produto">Tipo do produto</label>
-    <input type="text" class="form-control" id="id_tipo_produto" name="id_tipo_produto" value="{{$item->id_tipo_produto ?? ''}}">
+      <label for="id_categoria ">Categoria</label>
+    <select id="id_categoria " class="form-control" name="id_categoria" value="{{ $item->id_categoria ?? ''}}">
+        <option selected>Escolha uma categoria</option>
+        @foreach ($categorias as $categoria)
+            <option value= "{{ $categoria->id_categoria ?? ''}}">{{ $categoria->ds_categoria ?? ''}}</option>
+        @endforeach
+      </select>
 </div>
