@@ -34,7 +34,7 @@ Route::put('/admin/clientes/atualizar/{id}', 'admin\ClienteController@atualizar'
 ->name('admin.clientes.atualizar');
 Route::delete('/admin/clientes/deletar/{id}', 'admin\ClienteController@deletar')
 ->name('admin.clientes.deletar');
-
+});
 
 //Rotas de Pedidos
 Route::get('/admin/pedidos', 'admin\PedidoController@index')
@@ -63,15 +63,36 @@ Route::put('/admin/produto/atualizar/{id}', 'admin\ProdutoController@atualizar')
 ->name('admin.produto.atualizar');
 Route::delete('/admin/produto/deletar/{id}', 'admin\ProdutoController@deletar')
 ->name('admin.produto.deletar');
-});
+
+
+//Rotas preco
+Route::get('/admin/preco', 'admin\PrecoController@index')
+->name('admin.preco');
+Route::get('/admin/preco/adicionar', 'admin\PrecoController@adicionar')
+->name('admin.preco.adicionar');
+Route::post('admin/preco/salvar', 'admin\PrecoController@salvar')
+->name('admin.preco.salvar');
+Route::get('/admin/preco/editar/{id}', 'admin\PrecoController@editar')
+->name('admin.preco.editar');
+Route::put('/admin/preco/atualizar/{id}', 'admin\PrecoController@atualizar')
+->name('admin.preco.atualizar');
+Route::delete('/admin/preco/deletar/{id}', 'admin\PrecoController@deletar')
+->name('admin.preco.deletar');
+
+//Rotas estoque
+Route::get('/admin/estoque', 'admin\EstoqueController@index')
+->name('admin.estoque');
+Route::get('/admin/estoque/adicionar', 'admin\EstoqueController@adicionar')
+->name('admin.estoque.adicionar');
+Route::post('admin/estoque/salvar', 'admin\EstoqueController@salvar')
+->name('admin.estoque.salvar');
+Route::get('/admin/estoque/editar/{id}', 'admin\EstoqueController@editar')
+->name('admin.estoque.editar');
+Route::put('/admin/estoque/atualizar/{id}', 'admin\EstoqueController@atualizar')
+->name('admin.estoque.atualizar');
+Route::delete('/admin/estoque/deletar/{id}', 'admin\EstoqueController@deletar')
+->name('admin.estoque.deletar');
+
+
 
 Auth::routes();
-
-Route::get('/enviarEmail', function (){
-    return view('api.enviar-email');
-});
-
-//Rotas teste 
-
-Route::get('/produtos/listar', 'admin\ProdutoController@index')
-->name('api.produtos.listar');

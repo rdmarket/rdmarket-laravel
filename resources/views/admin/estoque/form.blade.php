@@ -6,6 +6,10 @@
     <label for="ds_produto">Descrição do produto</label>
     <input type="text" class="form-control" id="ds_produto" name="ds_produto" value="{{$item->ds_produto ?? ''}}">
 </div>
+<!-- <div class="form-group">
+    <label for="id_categoria">Categoria</label>
+    <input type="text" class="form-control" id="id_categoria" name="id_categoria" value="{{$item->id_categoria ?? ''}}">
+</div> -->
 
 <div class="form-group">
       <label for="id_categoria ">Categoria</label>
