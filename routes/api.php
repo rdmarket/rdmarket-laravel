@@ -26,6 +26,8 @@ Route::get('/devolverDadosCartao/{id}','Api\checkout\CheckoutController@devolver
 
 
 //rota produtos
+Route::get('/produtos/listarCategorias', 'Api\ProdutoController@listarCategorias')
+->name('api.produtos.listarCategorias');
 Route::get('/produtos/listarPorTipo/{id_tipo_produto}', 'Api\ProdutoController@listarPorTipo')
 ->name('api.produtos.listarPorTipo');
 Route::get('/produtos/listarNovidades', 'Api\ProdutoController@listarNovidades')

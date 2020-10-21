@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Api;
 
 use App\Models\Produto;
+use App\Models\Imagem;
 use App\Models\TipoProduto;
 use App\Models\Preco;
 use App\Http\Controllers\Controller;
+use App\Models\CategoriaProduto;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
@@ -37,12 +39,12 @@ class ProdutoController extends BaseController
 
     public function listarCategorias()
     {
-        $itens = Produto::all();
-
-        if (empty($itens->all())) {
-            return response()->json('Item não encontrado.', 404);
-        }
+        $itens = CategoriaProduto::all();
         
+        if (empty($itens->all())) {
+        return response()->json('Dado não encontrado.', 404);
+        }
+    
         return response()->json($itens, 200);
 
     }
@@ -68,12 +70,13 @@ class ProdutoController extends BaseController
 
     public function listarNovidades()
     {   
-        $dados = $this->classe::join('tipo_produto', 'produto.id_tipo_produto', '=', 'tipo_produto.id_tipo_produto')
+        $dados = $this->classe::join('categoria_produto', 'produto.id_categoria', '=', 'categoria_produto.id_categoria')
         ->join('preco', 'produto.id_produto', '=', 'preco.id_produto')
         ->join('estoque', 'produto.id_produto', '=', 'estoque.id_produto')
-        // ->join('imagem', 'produto.id_produto', '=', 'imagem.id_produto')
-        ->select('produto.id_produto', 'produto.ds_produto', 'produto.data_aquisicao', 'tipo_produto.ds_tipo_produto',
-                 'preco.valor_venda', 'preco.p_desconto', 'estoque.qtd_produto_estoque')
+        ->join('imagem', 'produto.id_produto', '=', 'imagem.id_produto')
+        ->where('imagem.ds_imagem_produto','=','frente')
+        ->select('produto.id_produto', 'produto.ds_produto', 'produto.data_aquisicao', 'categoria_produto.ds_categoria',
+                 'preco.valor_venda', 'preco.p_desconto', 'estoque.qtd_produto_estoque','imagem.*')
         ->get();
         $dataAtual = Carbon::now();
 
