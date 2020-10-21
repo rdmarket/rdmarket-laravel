@@ -37,7 +37,7 @@ class ProdutoController extends BaseController
 
     public function listarCategorias()
     {
-        $itens = TipoProduto::all();
+        $itens = Produto::all();
 
         if (empty($itens->all())) {
             return response()->json('Item não encontrado.', 404);
