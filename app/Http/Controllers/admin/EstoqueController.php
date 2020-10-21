@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\admin\admin;
+namespace App\Http\Controllers\admin;
 
 use App\Models\Estoque;
 use App\Models\Produto;
+use App\Models\CategoriaProduto;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class EstoqueController extends Controller
+class EstoqueController extends BaseController
 {
     public function __construct()
     {
@@ -30,12 +31,37 @@ class EstoqueController extends Controller
     {
         $produtos = Produto::all();
         
-        return view("$this->view.adicionar", compact('categorias'));
+        return view("$this->view.adicionar", compact('produtos'));
+    }
+
+    public function salvar(Request $req)
+    {
+        $item = $req->all();
+        $estoqueExistente = $this->classe::all();
+        
+
+        foreach($estoqueExistente as $estoque)
+        {
+            if($estoque->id_produto == $item['id_produto']) {
+                return redirect()->route("$this->view");
+            }
+        }
+        
+        $this->classe::create($item);
+       
+
+        $req->session()
+          ->flash(
+              'mensagem',
+              "Adicionado com sucesso"
+          );
+
+        return redirect()->route("$this->view");
     }
 
     public function editar($id)
     {
-        $categorias = CategoriaProduto::all();
+        $produtos = Produto::all();
         $item = $this->classe::find($id);
         return view("$this->view.editar", compact('item', 'produtos'));
 

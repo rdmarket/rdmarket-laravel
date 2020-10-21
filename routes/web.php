@@ -93,6 +93,19 @@ Route::put('/admin/estoque/atualizar/{id}', 'admin\EstoqueController@atualizar')
 Route::delete('/admin/estoque/deletar/{id}', 'admin\EstoqueController@deletar')
 ->name('admin.estoque.deletar');
 
+//Rotas imagem
+Route::get('/admin/imagem', 'admin\ImagemController@index')
+->name('admin.imagem');
+Route::get('/admin/imagem/adicionar', 'admin\ImagemController@adicionar')
+->name('admin.imagem.adicionar');
+Route::post('admin/imagem/salvar', 'admin\ImagemController@salvar')
+->name('admin.imagem.salvar');
+Route::get('/admin/imagem/editar/{id}', 'admin\ImagemController@editar')
+->name('admin.imagem.editar');
+Route::put('/admin/imagem/atualizar/{id}', 'admin\ImagemController@atualizar')
+->name('admin.imagem.atualizar');
+Route::delete('/admin/imagem/deletar/{id}', 'admin\ImagemController@deletar')
+->name('admin.imagem.deletar');
 
 
 Auth::routes();

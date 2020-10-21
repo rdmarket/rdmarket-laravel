@@ -35,8 +35,9 @@
                         </button>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="{{ route('admin.produto')}}">Produtos</a>
-                            <a class="dropdown-item" href="#">Preços</a>
-                            <a class="dropdown-item" href="#">Estoque</a>
+                            <a class="dropdown-item" href="{{ route('admin.preco')}}">Preços</a>
+                            <a class="dropdown-item" href="{{ route('admin.estoque')}}">Estoque</a>
+                            <a class="dropdown-item" href="{{ route('admin.imagem')}}">Imagem</a>
                         </div>
                     </div>
                 </li>
@@ -80,6 +81,9 @@
                         </a>
                         <a class="dropdown-item" href="{{ route('admin.estoque')}}">
                           Estoque
+                        </a>
+                        <a class="dropdown-item" href="{{ route('admin.imagem')}}">
+                          Imagem
                         </a>
                     </div>
                 </li>
