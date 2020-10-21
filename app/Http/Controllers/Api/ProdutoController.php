@@ -14,18 +14,18 @@ use Illuminate\Support\Facades\DB;
 
 class ProdutoController extends BaseController
 {
-    public function __construct()
+    public function __construct()tipo
     {
         $this->classe = Produto::class;
     }
 
     public function show($id_produto)
     {
-        $itens = $this->classe::join('tipo_produto', 'produto.id_tipo_produto', '=', 'tipo_produto.id_tipo_produto')
+        $itens = $this->classe::join('categoria_produto', 'produto.id_categoria_produto', '=', 'categoria_produto.id_categoria_produto')
         ->join('preco', 'produto.id_produto', '=', 'preco.id_produto')
         ->join('estoque', 'produto.id_produto', '=', 'estoque.id_produto')
         // ->join('imagem', 'produto.id_produto', '=', 'imagem.id_produto')
-        ->select('produto.id_produto', 'produto.ds_produto', 'produto.data_aquisicao', 'tipo_produto.ds_tipo_produto',
+        ->select('produto.id_produto', 'produto.ds_produto', 'produto.data_aquisicao', 'categoria_produto.ds_categoria_produto',
                  'preco.valor_venda', 'preco.p_desconto', 'estoque.qtd_produto_estoque')
         ->where('produto.id_produto', '=', $id_produto)    
         ->get();
@@ -49,7 +49,7 @@ class ProdutoController extends BaseController
 
     }
 
-    public function listarPorTipo($id_tipo_produto) //Aqui o produto será listado de acordo com a categoria
+    public function listarPorTipo($id_categoria) //Aqui o produto será listado de acordo com a categoria
     {
         $itens = $this->classe::join('categoria_produto', 'produto.id_categoria', '=', 'categoria_produto.id_categoria')
         ->join('preco', 'produto.id_produto', '=', 'preco.id_produto')
@@ -57,7 +57,7 @@ class ProdutoController extends BaseController
         ->join('imagem', 'produto.id_produto', '=', 'imagem.id_produto')
         ->select('produto.id_produto', 'produto.ds_produto', 'produto.data_aquisicao', 'categoria_produto.id_categoria','categoria_produto.ds_categoria',
                  'preco.valor_venda', 'estoque.qtd_produto_estoque','imagem.*')
-         ->where('produto.id_categoria', $id_tipo_produto)
+         ->where('produto.id_categoria', $id_categoria)
          ->where('imagem.ds_imagem_produto','=','frente')
 
         ->get();
