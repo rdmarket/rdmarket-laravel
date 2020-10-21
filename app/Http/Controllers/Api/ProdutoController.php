@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\DB;
 
 class ProdutoController extends BaseController
 {
-    public function __construct()tipo
+    public function __construct()
     {
         $this->classe = Produto::class;
     }
