@@ -14,11 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+Route::group(['middleware' => 'autenticador'], function() {
+    Route::post('/logout', 'loginController@logout');
+
+    Route::get('/listar', 'Api\UsuarioController@listar');
 });
 
-Route::post('/enviarEmail','Api\ContatoController@enviarEmail')->name('api.enviarEmail');
+
+// Route::post('/enviarEmail','Api\ContatoController@enviarEmail')->name('api.enviarEmail');
 
 //rota checkout 
 Route::get('/realizarCompra/{id}','Api\checkout\CheckoutController@realizarCompra')->name('api.realizarCompra');
@@ -26,6 +33,8 @@ Route::get('/devolverDadosCartao/{id}','Api\checkout\CheckoutController@devolver
 
 
 //rota produtos
+Route::get('/produtos/listarCategorias', 'Api\ProdutoController@listarCategorias')
+->name('api.produtos.listarCategorias');
 Route::get('/produtos/listarPorTipo/{id_tipo_produto}', 'Api\ProdutoController@listarPorTipo')
 ->name('api.produtos.listarPorTipo');
 Route::get('/produtos/listarNovidades', 'Api\ProdutoController@listarNovidades')
@@ -41,6 +50,11 @@ Route::get('pedidos/listarPorCliente/{id_cliente}','Api\PedidoController@listarP
 Route::post('pedidos/gerarPedido','Api\PedidoController@gerarPedido');
 Route::apiResource('pedidos', 'Api\PedidoController');
 
+
+// Login
+Route::post('/login', 'loginController@login');
+
+Route::post('/cadastrar', 'Api\UsuarioController@cadastrar');
 //rota endereco
 Route::get('/endereco/listarTipo/{id}','Api\EnderecoController@listarTipo')
 ->name('api.endereco.listarTipo');
