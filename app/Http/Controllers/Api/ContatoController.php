@@ -1,9 +1,11 @@
 <?php
 
 namespace App\Http\Controllers\Api;
+
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class ContatoController extends BaseController
+class ContatoController extends Controller
 {
 
     public function enviarEmail (Request $req)
@@ -15,5 +17,4 @@ class ContatoController extends BaseController
             }
         return response()->json ("Erro ao enviar o email", 404);
     }
-
 }
