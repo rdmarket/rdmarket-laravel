@@ -5,7 +5,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Preco extends Model
 {
-    protected $fillableb = ['id_produto','valor_aquisicao','valor_venda','p_desconto','status_desconto','dt_inicio_desconto','dt_final_desconto'];
+    protected $primaryKey = 'id_preco';
+
+    protected $fillable = ['id_produto','valor_aquisicao','valor_venda',
+        'p_desconto','status_desconto','dt_inicio_desconto','dt_final_desconto'];
+
+    protected $table = 'preco';
 
     public function produto()
     {

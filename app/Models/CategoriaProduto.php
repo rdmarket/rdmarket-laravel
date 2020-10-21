@@ -4,13 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class TipoProduto extends Model
+class CategoriaProduto extends Model
 {
     protected $fillable = [
-        'id_tipo_produto','ds_tipo_produto'
+        'id_categoria','ds_categoria'
     ];
 
-    protected $table = 'tipo_produto';
+    protected $table = 'categoria_produto';
 
     public function produto()
     {

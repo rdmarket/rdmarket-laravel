@@ -9,12 +9,6 @@
             <div class="col-9">
                 <h3>Lista de Clientes</h3>
             </div>
-            <div class="col-3">
-                <a class="btn btn-success"
-                   href="{{ route('admin.clientes.adicionar') }}">
-                    Adicionar
-                </a>
-            </div>
         </div>
         <div class="row">
             <div class="col-12">
@@ -33,9 +27,8 @@
                         <th scope="col">Id</th>
                         <th scope="col">Nome</th>
                         <th scope="col">CPF</th>
-                        <th scope="col">Data de nascimento</th>
-                        <th scope="col">Ações</th>
-                        <th scope="col"></th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Telefone</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -44,20 +37,9 @@
                             <td>{{ $item->id_cliente}}</td>
                             <td>{{ $item->nm_cliente }}</td>
                             <td>{{ $item->num_cpf }}</td>
-                            <td>{{ \Carbon\Carbon::parse($item->data_nascimento)->format('d/m/Y') }}</td>
-                            <td>
-                                <a class="btn btn-primary"
-                                    href="{{route('admin.clientes.editar', $item->id_cliente)}}">
-                                    Editar</a>
-                            </td>
-                            <td>
-                                <form action="{{route('admin.clientes.deletar', $item->id_cliente)}}" method="post"> 
-                                    @csrf
-                                    @method('DELETE')
-                                    <!-- <input type="submit" name="excluir" value="delete" class="btn btn-danger"> -->
-                                    <button type="submit" class="btn btn-danger">Deletar</button>
-                                </form>
-                            </td>
+                            <td>{{ $item->ds_email }}</td> 
+                            <td>{{ $item->num_celular }}</td>                         
+
                         </tr>
                     @endforeach
                 </tbody>

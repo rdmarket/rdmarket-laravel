@@ -1,0 +1,8 @@
+
+####################### item_pedido ###############################
+ALTER TABLE `item_pedido` ADD CONSTRAINT `pk_pedido_item` PRIMARY KEY (`nr_item_pedido`, `id_pedido`);
+ALTER TABLE `item_pedido` MODIFY COLUMN `nr_item_pedido` BIGINT UNSIGNED AUTO_INCREMENT;
+
+###################### imagem #############################
+ALTER TABLE `imagem` ADD CONSTRAINT `pk_imagem_produto` PRIMARY KEY (`id_imagem`, `id_produto`);
+ALTER TABLE `imagem` MODIFY COLUMN `id_imagem` BIGINT UNSIGNED AUTO_INCREMENT;

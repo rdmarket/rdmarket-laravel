@@ -14,11 +14,13 @@ class CreateImagemTable extends Migration
     public function up()
     {
         Schema::create('imagem', function (Blueprint $table) {
-            $table->increments('id_imagem');
+           
+            $table->bigInteger('id_imagem')->unsigned();
             $table->bigInteger('id_produto')->unsigned();
             $table->string('caminho_imagem');                                    
             $table->string('ds_imagem_produto');                                    
             $table->timestamps();
+            
         });
     }
 

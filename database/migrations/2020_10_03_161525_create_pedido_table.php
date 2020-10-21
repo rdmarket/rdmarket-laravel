@@ -18,6 +18,7 @@ class CreatePedidoTable extends Migration
             $table->bigInteger('id_cliente')->unsigned();
             $table->bigInteger('id_forma_pagamento')->unsigned();
             $table->string('nr_pedido');
+            $table->bigInteger('qtd_total_produtos')->unsigned(); //Campo novo, soma da quantidade de produtos no pedido
             $table->float('vlr_total_pedido');
             $table->bigInteger('id_status_pedido')->unsigned();
             $table->bigInteger('id_endereco')->unsigned();

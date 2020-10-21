@@ -10,14 +10,14 @@ class Produto extends Model
     protected $primaryKey = 'id_produto';
 
     protected $fillable = [
-        'id_tipo_produto','ds_produto','data_aquisicao',
+        'id_categoria','ds_produto','data_aquisicao',
     ];
 
     protected $table = 'produto';
 
-    public function tipoProduto()
+    public function categoriaProduto()
     {
-        return $this->hasOne('App\Models\TipoProduto');
+        return $this->hasOne('App\Models\CategoriaProduto');
     }
 
     public function estoque()

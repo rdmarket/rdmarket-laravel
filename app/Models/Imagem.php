@@ -10,6 +10,7 @@ class Imagem extends Model
         'id_imagem','id_produto','caminho_imagem','ds_imagem_produto',
     ];
 
+
     protected $table = 'imagem';
 
     public function produto()
