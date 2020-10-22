@@ -21,13 +21,14 @@ class ProdutoController extends BaseController
 
     public function show($id_produto)
     {
-        $itens = $this->classe::join('tipo_produto', 'produto.id_tipo_produto', '=', 'tipo_produto.id_tipo_produto')
+        $itens = $this->classe::join('categoria_produto', 'produto.id_categoria', '=', 'categoria_produto.id_categoria')
         ->join('preco', 'produto.id_produto', '=', 'preco.id_produto')
         ->join('estoque', 'produto.id_produto', '=', 'estoque.id_produto')
-        // ->join('imagem', 'produto.id_produto', '=', 'imagem.id_produto')
-        ->select('produto.id_produto', 'produto.ds_produto', 'produto.data_aquisicao', 'tipo_produto.ds_tipo_produto',
-                 'preco.valor_venda', 'preco.p_desconto', 'estoque.qtd_produto_estoque')
-        ->where('produto.id_produto', '=', $id_produto)    
+        ->join('imagem', 'produto.id_produto', '=', 'imagem.id_produto')
+        ->select('produto.id_produto', 'produto.ds_produto', 'produto.data_aquisicao', 'categoria_produto.ds_categoria',
+                 'preco.valor_venda', 'preco.status_desconto','preco.p_desconto', 'estoque.qtd_produto_estoque','imagem.*')
+        ->where('produto.id_produto', '=', $id_produto)
+        ->where('imagem.ds_imagem_produto','=','frente')
         ->get();
 
         if (empty($itens->all())) {
@@ -56,7 +57,7 @@ class ProdutoController extends BaseController
         ->join('estoque', 'produto.id_produto', '=', 'estoque.id_produto')
         ->join('imagem', 'produto.id_produto', '=', 'imagem.id_produto')
         ->select('produto.id_produto', 'produto.ds_produto', 'produto.data_aquisicao', 'categoria_produto.id_categoria','categoria_produto.ds_categoria',
-                 'preco.valor_venda', 'estoque.qtd_produto_estoque','imagem.*')
+                 'preco.valor_venda', 'preco.p_desconto','preco.status_desconto','estoque.qtd_produto_estoque','imagem.*')
          ->where('produto.id_categoria', $id_tipo_produto)
          ->where('imagem.ds_imagem_produto','=','frente')
 
@@ -78,7 +79,7 @@ class ProdutoController extends BaseController
         ->join('imagem', 'produto.id_produto', '=', 'imagem.id_produto')
         ->where('imagem.ds_imagem_produto','=','frente')
         ->select('produto.id_produto', 'produto.ds_produto', 'produto.data_aquisicao', 'categoria_produto.ds_categoria',
-                 'preco.valor_venda', 'preco.p_desconto', 'estoque.qtd_produto_estoque','imagem.*')
+                 'preco.valor_venda', 'preco.p_desconto','preco.status_desconto', 'estoque.qtd_produto_estoque','imagem.*')
         ->get();
         $dataAtual = Carbon::now();
 
