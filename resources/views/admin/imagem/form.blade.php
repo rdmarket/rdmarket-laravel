@@ -1,4 +1,9 @@
 <div class="form-group">
+    <label for="caminho_imagem">Adicionar Imagem</label>
+    <input type="file" class="form-control" id="caminho_imagem" name="caminho_imagem" value="{{$item->caminho_imagem ?? ''}}">
+</div>
+
+<div class="form-group">
       <label for="id_produto">Produto</label>
     <select id="id_produto " class="form-control" name="id_produto" value="{{ $item->id_produto ?? ''}}">
         <option selected>Escolha uma produto</option>
@@ -8,10 +13,9 @@
       </select>
 </div>
 
-
 <div class="form-group">
-    <label for="qtd_produto_estoque">Quantidade</label>
-    <input type="text" class="form-control" id="qtd_produto_estoque" name="qtd_produto_estoque" value="{{$item->qtd_produto_estoque ?? ''}}">
+    <label for="ds_imagem_produto">Descrição</label>
+    <input type="text" class="form-control" id="ds_imagem_produto" name="ds_imagem_produto" value="{{$item->ds_imagem_produto ?? ''}}">
 </div>
 
 

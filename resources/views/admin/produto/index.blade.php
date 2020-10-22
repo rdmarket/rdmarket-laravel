@@ -7,7 +7,7 @@
 <div class="container">
         <div class="row mt-5 mb-2">
             <div class="col-9">
-                <h3>Lista de Produto</h3>
+                <h3>Lista de Produtos</h3>
             </div>
             <div class="col-3">
                 <a class="btn btn-success"

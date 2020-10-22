@@ -19,9 +19,9 @@ class ClienteController extends BaseController
     {   
         $itens = $this->classe::
         join('contato', 'cliente.id_cliente', '=', 'contato.id_cliente')
-        ->join('endereco_cliente', 'cliente.id_cliente', '=', 'endereco_cliente.id_cliente')
-        ->join('endereco', 'endereco_cliente.id_endereco', '=', 'endereco.id_endereco')
-        ->select('cliente.*', 'contato.*', 'endereco.*')
+      //   ->join('endereco_cliente', 'cliente.id_cliente', '=', 'endereco_cliente.id_cliente')
+      //   ->join('endereco', 'endereco_cliente.id_endereco', '=', 'endereco.id_endereco')
+        ->select('cliente.*', 'contato.*')
         ->get();
          
         $mensagem = $req->session()->get('mensagem');
