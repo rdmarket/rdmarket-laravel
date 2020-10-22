@@ -17,6 +17,7 @@ class ProdutoController extends BaseController
     public function __construct()
     {
         $this->classe = Produto::class;
+        
     }
 
     public function show($id_produto)
