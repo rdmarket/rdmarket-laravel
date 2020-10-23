@@ -27,18 +27,23 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('admin.clientes') }}">Clientes</a>
                 </li>
-                <li class="nav-item">
-                    <!-- <a class="nav-link" href="{{ route('admin.produto')}}">Produtos</a> -->
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Produtos
-                        </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{{ route('admin.produto')}}">Produtos</a>
-                            <a class="dropdown-item" href="{{ route('admin.preco')}}">Preços</a>
-                            <a class="dropdown-item" href="{{ route('admin.estoque')}}">Estoque</a>
-                            <a class="dropdown-item" href="{{ route('admin.imagem')}}">Imagem</a>
-                        </div>
+                <li class="nav-item dropdown style-dropdown">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        Produtos<span class="caret"></span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ route('admin.produto')}}">
+                          Produtos  
+                        </a>
+                        <a class="dropdown-item" href="{{ route('admin.preco')}}">
+                          Preços
+                        </a>
+                        <a class="dropdown-item" href="{{ route('admin.estoque')}}">
+                          Estoque
+                        </a>
+                        <a class="dropdown-item" href="{{ route('admin.imagem')}}">
+                          Imagem
+                        </a>
                     </div>
                 </li>
                 <li class="nav-item">
@@ -57,18 +62,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('admin.clientes') }}">Clientes</a>
                 </li>
-                <li class="nav-item dropdown">
-                   <!-- <a class="nav-link" href="{{ route('admin.produto')}}">Produtos</a> -->
-                   <!-- <div class="btn-group">
-                        <button type="button" class="btn dropdown-toggle style-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Produtos
-                        </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{{ route('admin.produto')}}">Produtos</a>
-                            <a class="dropdown-item" href="{{ route('admin.preco')}}">Preços</a>
-                            <a class="dropdown-item" href="#">Estoque</a>
-                        </div>
-                    </div> -->
+                <li class="nav-item dropdown style-dropdown">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         Produtos<span class="caret"></span>
                     </a>
