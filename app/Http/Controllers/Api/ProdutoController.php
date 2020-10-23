@@ -112,7 +112,7 @@ class ProdutoController extends BaseController
         ->where('imagem.ds_imagem_produto','=','frente')
         ->where('preco.status_desconto','=','ativo')
         ->select('produto.id_produto', 'produto.ds_produto', 'produto.data_aquisicao', 'categoria_produto.ds_categoria',
-                 'preco.valor_venda', 'preco.p_desconto', 'estoque.qtd_produto_estoque','imagem.*')
+                 'preco.valor_venda','preco.status_desconto', 'preco.p_desconto', 'estoque.qtd_produto_estoque','imagem.*')
         ->get();
 
         foreach($dados as $dado)
@@ -129,6 +129,31 @@ class ProdutoController extends BaseController
 
         return response()->json($itens, 200);
     }
+
+    public function listarTodosDescontos()
+    {
+        $dados = $this->classe::join('categoria_produto', 'produto.id_categoria', '=', 'categoria_produto.id_categoria')
+        ->join('preco', 'produto.id_produto', '=', 'preco.id_produto')
+        ->join('estoque', 'produto.id_produto', '=', 'estoque.id_produto')
+        ->join('imagem', 'produto.id_produto', '=', 'imagem.id_produto')
+        ->where('imagem.ds_imagem_produto','=','frente')
+        ->where('preco.status_desconto','=','ativo')
+        ->select('produto.id_produto', 'produto.ds_produto', 'produto.data_aquisicao', 'categoria_produto.ds_categoria',
+                 'preco.valor_venda', 'preco.status_desconto','preco.p_desconto', 'estoque.qtd_produto_estoque','imagem.*')
+        ->get();
+
+        foreach($dados as $dado)
+        {
+                $itens[] = $dado;            
+        }
+
+        if (empty($itens)) {
+            return response()->json('Dado não encontrado', 404);
+        }
+
+        return response()->json($itens, 200);
+    }
+
     public function listarBanner()
     {
         $dados = $this->classe::join('imagem', 'produto.id_produto', '=', 'imagem.id_produto')
