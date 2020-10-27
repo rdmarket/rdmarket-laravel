@@ -208,5 +208,4 @@ INSERT INTO `produto` (id_categoria,ds_produto,data_aquisicao,created_at,updated
 ,(9,'Chocolate Kinder Ovo menina 40g 2un','2020-10-07',NULL,NULL)
 ,(8,'Panettone Village Light 400g','2020-10-03',NULL,NULL)
 ,(11,'Salmão marinado Damm Gravlaks 100g','2020-10-21',NULL,NULL)
-,(13,'Teste','2020-10-02','2020-10-23 19:09:00.0','2020-10-23 19:09:00.0')
 ;
