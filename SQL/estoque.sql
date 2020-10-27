@@ -1,0 +1,243 @@
+-- phpMyAdmin SQL Dump
+-- version 5.0.2
+-- https://www.phpmyadmin.net/
+--
+-- Host: laradock_mysql_1
+-- Tempo de geração: 27-Out-2020 às 20:56
+-- Versão do servidor: 8.0.21
+-- versão do PHP: 7.4.9
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Banco de dados: `rdmarket`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `estoque`
+--
+
+CREATE TABLE `estoque` (
+  `id_produto` bigint UNSIGNED NOT NULL,
+  `qtd_produto_estoque` bigint NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Extraindo dados da tabela `estoque`
+--
+
+INSERT INTO `estoque` (`id_produto`, `qtd_produto_estoque`, `created_at`, `updated_at`) VALUES
+(1, 128, NULL, NULL),
+(2, 213, NULL, NULL),
+(3, 221, NULL, NULL),
+(4, 228, NULL, NULL),
+(5, 199, NULL, NULL),
+(6, 317, NULL, NULL),
+(7, 286, NULL, NULL),
+(8, 245, NULL, NULL),
+(9, 243, NULL, NULL),
+(10, 212, NULL, NULL),
+(11, 115, NULL, NULL),
+(12, 158, NULL, NULL),
+(13, 103, NULL, NULL),
+(14, 87, NULL, NULL),
+(15, 89, NULL, NULL),
+(16, 111, NULL, NULL),
+(17, 101, NULL, NULL),
+(18, 154, NULL, NULL),
+(19, 68, NULL, NULL),
+(20, 99, NULL, NULL),
+(21, 289, NULL, NULL),
+(22, 276, NULL, NULL),
+(23, 243, NULL, NULL),
+(24, 209, NULL, NULL),
+(25, 287, NULL, NULL),
+(26, 289, NULL, NULL),
+(27, 265, NULL, NULL),
+(28, 333, NULL, NULL),
+(29, 374, NULL, NULL),
+(30, 398, NULL, NULL),
+(31, 89, NULL, NULL),
+(32, 97, NULL, NULL),
+(33, 103, NULL, NULL),
+(34, 200, NULL, NULL),
+(35, 78, NULL, NULL),
+(36, 250, NULL, NULL),
+(37, 120, NULL, NULL),
+(38, 280, NULL, NULL),
+(39, 320, NULL, NULL),
+(40, 400, NULL, NULL),
+(41, 160, NULL, NULL),
+(42, 130, NULL, NULL),
+(43, 116, NULL, NULL),
+(44, 87, NULL, NULL),
+(45, 99, NULL, NULL),
+(46, 234, NULL, NULL),
+(47, 73, NULL, NULL),
+(48, 89, NULL, NULL),
+(49, 260, NULL, NULL),
+(50, 300, NULL, NULL),
+(51, 281, NULL, NULL),
+(52, 310, NULL, NULL),
+(53, 301, NULL, NULL),
+(54, 386, NULL, NULL),
+(55, 354, NULL, NULL),
+(56, 327, NULL, NULL),
+(57, 333, NULL, NULL),
+(58, 313, NULL, NULL),
+(59, 348, NULL, NULL),
+(60, 321, NULL, NULL),
+(61, 302, NULL, NULL),
+(62, 311, NULL, NULL),
+(63, 210, NULL, NULL),
+(64, 218, NULL, NULL),
+(65, 202, NULL, NULL),
+(66, 276, NULL, NULL),
+(67, 232, NULL, NULL),
+(68, 211, NULL, NULL),
+(69, 201, NULL, NULL),
+(70, 265, NULL, NULL),
+(71, 213, NULL, NULL),
+(72, 258, NULL, NULL),
+(73, 150, NULL, NULL),
+(74, 215, NULL, NULL),
+(75, 318, NULL, NULL),
+(76, 98, NULL, NULL),
+(77, 75, NULL, NULL),
+(78, 138, NULL, NULL),
+(79, 217, NULL, NULL),
+(80, 380, NULL, NULL),
+(81, 147, NULL, NULL),
+(82, 133, NULL, NULL),
+(83, 113, NULL, NULL),
+(84, 189, NULL, NULL),
+(85, 97, NULL, NULL),
+(86, 43, NULL, NULL),
+(87, 165, NULL, NULL),
+(88, 187, NULL, NULL),
+(89, 198, NULL, NULL),
+(90, 167, NULL, NULL),
+(91, 198, NULL, NULL),
+(92, 321, NULL, NULL),
+(93, 145, NULL, NULL),
+(94, 356, NULL, NULL),
+(95, 389, NULL, NULL),
+(96, 457, NULL, NULL),
+(97, 289, NULL, NULL),
+(98, 476, NULL, NULL),
+(99, 199, NULL, NULL),
+(100, 485, NULL, NULL),
+(101, 437, NULL, NULL),
+(102, 318, NULL, NULL),
+(103, 356, NULL, NULL),
+(104, 211, NULL, NULL),
+(105, 213, NULL, NULL),
+(106, 198, NULL, NULL),
+(107, 210, NULL, NULL),
+(108, 199, NULL, NULL),
+(109, 234, NULL, NULL),
+(110, 120, NULL, NULL),
+(111, 145, NULL, NULL),
+(112, 211, NULL, NULL),
+(113, 187, NULL, NULL),
+(114, 213, NULL, NULL),
+(115, 198, NULL, NULL),
+(116, 210, NULL, NULL),
+(117, 199, NULL, NULL),
+(118, 234, NULL, NULL),
+(119, 120, NULL, NULL),
+(120, 145, NULL, NULL),
+(121, 187, NULL, NULL),
+(122, 234, NULL, NULL),
+(123, 197, NULL, NULL),
+(124, 218, NULL, NULL),
+(125, 187, NULL, NULL),
+(126, 167, NULL, NULL),
+(127, 126, NULL, NULL),
+(128, 290, NULL, NULL),
+(129, 185, NULL, NULL),
+(130, 254, NULL, NULL),
+(131, 300, NULL, NULL),
+(132, 291, NULL, NULL),
+(133, 233, NULL, NULL),
+(134, 222, NULL, NULL),
+(135, 267, NULL, NULL),
+(136, 199, NULL, NULL),
+(137, 200, NULL, NULL),
+(138, 211, NULL, NULL),
+(139, 229, NULL, NULL),
+(140, 236, NULL, NULL),
+(141, 240, NULL, NULL),
+(142, 400, NULL, NULL),
+(143, 450, NULL, NULL),
+(144, 500, NULL, NULL),
+(145, 483, NULL, NULL),
+(146, 417, NULL, NULL),
+(147, 436, NULL, NULL),
+(148, 473, NULL, NULL),
+(149, 417, NULL, NULL),
+(150, 485, NULL, NULL),
+(151, 436, NULL, NULL),
+(152, 235, NULL, NULL),
+(153, 198, NULL, NULL),
+(154, 210, NULL, NULL),
+(155, 199, NULL, NULL),
+(156, 145, NULL, NULL),
+(157, 115, NULL, NULL),
+(158, 120, NULL, NULL),
+(159, 135, NULL, NULL),
+(160, 158, NULL, NULL),
+(161, 117, NULL, NULL),
+(162, 500, NULL, NULL),
+(163, 548, NULL, NULL),
+(164, 487, NULL, NULL),
+(165, 390, NULL, NULL),
+(166, 520, NULL, NULL),
+(167, 517, NULL, NULL),
+(168, 365, NULL, NULL),
+(169, 470, NULL, NULL),
+(170, 387, NULL, NULL),
+(171, 259, NULL, NULL),
+(172, 450, NULL, NULL),
+(173, 450, NULL, NULL),
+(174, 327, NULL, NULL),
+(175, 298, NULL, NULL),
+(176, 321, '2020-10-27 20:29:22', '2020-10-27 20:29:22'),
+(177, 165, '2020-10-27 20:45:09', '2020-10-27 20:45:09');
+
+--
+-- Índices para tabelas despejadas
+--
+
+--
+-- Índices para tabela `estoque`
+--
+ALTER TABLE `estoque`
+  ADD PRIMARY KEY (`id_produto`);
+
+--
+-- Restrições para despejos de tabelas
+--
+
+--
+-- Limitadores para a tabela `estoque`
+--
+ALTER TABLE `estoque`
+  ADD CONSTRAINT `FK_estoque_produto` FOREIGN KEY (`id_produto`) REFERENCES `produto` (`id_produto`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
