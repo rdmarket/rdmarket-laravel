@@ -87,6 +87,7 @@ class PedidoController extends BaseController
         $dados = Pedido::join('cliente', 'pedido.id_cliente', '=', 'cliente.id_cliente')
         ->join('status_pedido', 'pedido.id_status_pedido', '=', 'status_pedido.id_status_pedido')
         ->where('pedido.id_cliente','=',$id)
+        ->where('status_pedido.desc_status_pedido', 'not like', "%Aguardando pagamento%")
         ->select('pedido.id_pedido','pedido.nr_pedido','pedido.vlr_total_pedido',
                 'pedido.qtd_total_produtos','pedido.data_pedido','status_pedido.desc_status_pedido')->get();
 
