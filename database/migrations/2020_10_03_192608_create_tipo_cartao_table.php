@@ -14,7 +14,7 @@ class CreateTipoCartaoTable extends Migration
     public function up()
     {
         Schema::create('tipo_cartao', function (Blueprint $table) {
-            $table->integer('id_tipo_cartao')->primary();
+            $table->integer('id_tipo_cartao')->primary()->unsigned();
             $table->string('ds_tipo_cartao');
             $table->timestamps();
         });

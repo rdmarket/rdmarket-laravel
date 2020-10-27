@@ -15,7 +15,7 @@ class CreateEnderecoTable extends Migration
     {
         Schema::create('endereco', function (Blueprint $table) {
             $table->id('id_endereco');
-            $table->bigInteger('id_tipo_endereco')->unsigned();
+            $table->integer('id_tipo_endereco')->unsigned();
             $table->string('num_cep');
             $table->string('nm_rua');
             $table->string('num_endereco');
