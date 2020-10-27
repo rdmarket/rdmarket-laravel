@@ -30,6 +30,8 @@ Route::group(['middleware' => 'autenticador'], function() {
 //rota checkout 
 Route::get('/realizarCompra/{id}','Api\checkout\CheckoutController@realizarCompra')->name('api.realizarCompra');
 Route::get('/devolverDadosCartao/{id}','Api\checkout\CheckoutController@devolverDadosCartao')->name('api.devolverDadosCartao');
+Route::get('/devolverResumo/{id}','Api\checkout\CheckoutController@devolverResumo')->name('api.devolverResumo');
+Route::apiResource('checkout', 'Api\checkout\CheckoutController');
 
 
 //rota produtos
@@ -43,6 +45,10 @@ Route::get('/produtos/listarNovidades', 'Api\ProdutoController@listarNovidades')
 ->name('api.produtos.listarNovidades');
 Route::get('/produtos/listarDescontos', 'Api\ProdutoController@listarDescontos')
 ->name('api.produtos.listarDescontos');
+
+Route::get('/produtos/listarTodosDescontos', 'Api\ProdutoController@listarTodosDescontos')
+->name('api.produtos.listarTodosDescontos');
+
 Route::apiResource('produtos', 'Api\ProdutoController');
 // Route::get('/produtos/listar', 'Api\ProdutoController@listar')
 // ->name('api.listar.produto');

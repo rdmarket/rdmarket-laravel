@@ -50,4 +50,23 @@ class CheckoutController extends BaseController
 
         return response()->json($dado,200);
     }
+
+    public function devolverResumo($id_pedido){
+
+        $dados = DB::table('pedido')
+        ->join('item_pedido','pedido.id_pedido','=','item_pedido.id_pedido')
+        ->join('produto','item_pedido.id_produto','=','produto.id_produto')
+        ->join('categoria_produto','produto.id_categoria','=','categoria_produto.id_categoria')
+        ->join('preco','produto.id_produto','=','preco.id_produto')        
+        ->where('pedido.id_pedido','=',$id_pedido)
+        ->select('item_pedido.qtd_item_produto','item_pedido.vlr_total_item_pedido','produto.ds_produto','categoria_produto.ds_categoria')
+        ->get();
+
+        if(empty($dados))
+            return response()->json('Não existe produtos adicionados a este pedido',404);
+
+
+        return response()->json($dados,200);
+    }
+
 }
