@@ -21,7 +21,7 @@ class CreatePrecoTable extends Migration
             $table->integer('p_desconto')->nullable();
             $table->enum('status_desconto',['ativo','desativado']);
             $table->date('dt_inicio_desconto')->nullable();
-            $table->date('dt_final_desconto'->nullable());
+            $table->date('dt_final_desconto')->nullable();
             $table->timestamps();
         });
     }
