@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: laradock_mysql_1
--- Tempo de geração: 27-Out-2020 às 04:25
+-- Tempo de geração: 27-Out-2020 às 12:11
 -- Versão do servidor: 8.0.21
 -- versão do PHP: 7.4.9
 
