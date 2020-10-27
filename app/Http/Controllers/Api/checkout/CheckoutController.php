@@ -33,7 +33,7 @@ class CheckoutController extends BaseController
         return response()->json($dados,200);
     }
     public function realizarCompra($id_pedido){
-
+        
         $pedido = Pedido::find($id_pedido);
 
         if(is_null($pedido))
@@ -42,7 +42,13 @@ class CheckoutController extends BaseController
         if($pedido->vlr_total_pedido > 1000.00){
             return response()->json('Ocorreu um erro durante o pagamento',404);
         }
+        
         $dado = NotaFiscalController::gerarNotaFiscal($id_pedido);
+        
+
+        DB::table('pedido')
+                ->where('id_pedido', $id_pedido)
+                ->update(['id_status_pedido' => 2]);
 
         if(empty($dado))
             return response()->json('Não existe produtos adicionados a este pedido',404);
@@ -61,6 +67,7 @@ class CheckoutController extends BaseController
         ->where('pedido.id_pedido','=',$id_pedido)
         ->select('item_pedido.qtd_item_produto','item_pedido.vlr_total_item_pedido','produto.ds_produto','categoria_produto.ds_categoria')
         ->get();
+
 
         if(empty($dados))
             return response()->json('Não existe produtos adicionados a este pedido',404);

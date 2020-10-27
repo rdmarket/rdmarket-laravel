@@ -41,9 +41,9 @@ class PedidoController extends BaseController
 
             $itemPedido = new ItemPedido();
             $itemPedido->id_pedido = $pedido->id_pedido; // atrelar um ItemPedido ao Pedido
-            $itemPedido->id_produto = $item['id_produto'];// atrelar um produto a um ItemPedido
-            $itemPedido->qtd_item_produto = $item['qtd_item_produto']; //quantidade de produto em itemPedido
-            $itemPedido->vlr_total_item_pedido = ($item['qtd_item_produto'] * $item['valor_produto']); // calculo do valor qtde produto * valor_produto
+            $itemPedido->id_produto = $item['id'];// atrelar um produto a um ItemPedido
+            $itemPedido->qtd_item_produto = $item['qtd']; //quantidade de produto em itemPedido
+            $itemPedido->vlr_total_item_pedido = ($item['qtd'] * $item['preco']); // calculo do valor qtde produto * valor_produto
             $itemPedido->nr_item_pedido = round(rand(1,99999)); // numero randomico entre 1 e 99999
             $itemPedido->cd_status_item_pedido = 1; // status item pedido
             $itemPedido->data_item_pedido = Carbon::now()->format('Y-m-d G:H:i');
@@ -87,6 +87,7 @@ class PedidoController extends BaseController
         $dados = Pedido::join('cliente', 'pedido.id_cliente', '=', 'cliente.id_cliente')
         ->join('status_pedido', 'pedido.id_status_pedido', '=', 'status_pedido.id_status_pedido')
         ->where('pedido.id_cliente','=',$id)
+        ->where('status_pedido.desc_status_pedido', 'not like', "%Aguardando pagamento%")
         ->select('pedido.id_pedido','pedido.nr_pedido','pedido.vlr_total_pedido',
                 'pedido.qtd_total_produtos','pedido.data_pedido','status_pedido.desc_status_pedido')->get();
 
