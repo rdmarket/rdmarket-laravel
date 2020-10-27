@@ -30,6 +30,8 @@ Route::group(['middleware' => 'autenticador'], function() {
 //rota checkout 
 Route::get('/realizarCompra/{id}','Api\checkout\CheckoutController@realizarCompra')->name('api.realizarCompra');
 Route::get('/devolverDadosCartao/{id}','Api\checkout\CheckoutController@devolverDadosCartao')->name('api.devolverDadosCartao');
+Route::get('/devolverResumo/{id}','Api\checkout\CheckoutController@devolverResumo')->name('api.devolverResumo');
+Route::apiResource('checkout', 'Api\checkout\CheckoutController');
 
 
 //rota produtos

@@ -52,13 +52,15 @@ class ProdutoController extends BaseController
 
     public function listarPorTipo($id_categoria) //Aqui o produto será listado de acordo com a categoria
     {
+
+        
         $itens = $this->classe::join('categoria_produto', 'produto.id_categoria', '=', 'categoria_produto.id_categoria')
         ->join('preco', 'produto.id_produto', '=', 'preco.id_produto')
         ->join('estoque', 'produto.id_produto', '=', 'estoque.id_produto')
         ->join('imagem', 'produto.id_produto', '=', 'imagem.id_produto')
         ->select('produto.id_produto', 'produto.ds_produto', 'produto.data_aquisicao', 'categoria_produto.id_categoria','categoria_produto.ds_categoria',
                  'preco.valor_venda', 'preco.p_desconto','preco.status_desconto','estoque.qtd_produto_estoque','imagem.*')
-         ->where('produto.id_categoria', $id_categoria)
+         ->where('produto.id_categoria','=', $id_categoria)
 
 
          ->where('imagem.ds_imagem_produto','=','frente')
