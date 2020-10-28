@@ -79,9 +79,9 @@ INSERT INTO `imagem` (`id_imagem`, `id_produto`, `caminho_imagem`, `ds_imagem_pr
 (36, 1, 'cocacola-original-1,5L.webp', 'frente', '2020-10-27 04:22:43', '2020-10-27 04:22:43'),
 (37, 3, 'antarctica-soda-2L.jpg', 'frente', '2020-10-27 04:23:01', '2020-10-27 04:23:01'),
 (38, 2, 'antarctica-guarana-1,5L.jpg', 'frente', '2020-10-27 04:23:17', '2020-10-27 04:23:17'),
-(39, 174, 'bannerPanetone.jpg', 'banner', '2020-10-27 13:33:31', '2020-10-27 13:33:31'),
+(39, 174, 'bannerPanetone.png', 'banner', '2020-10-27 13:33:31', '2020-10-27 13:33:31'),
 (40, 176, 'lacta-caixa.jpg', 'frente', '2020-10-27 20:30:03', '2020-10-27 20:30:03'),
-(41, 176, 'banner-lacta.webp', 'banner', '2020-10-27 20:30:21', '2020-10-27 20:30:21'),
+(41, 176, 'bannerLacta.jpg', 'banner', '2020-10-27 20:30:21', '2020-10-27 20:30:21'),
 (42, 177, 'bannerSeara.png', 'banner', '2020-10-27 20:47:54', '2020-10-27 20:47:54');
 
 --

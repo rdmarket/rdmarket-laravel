@@ -29,7 +29,10 @@ class ImagemController extends BaseController
 
     public function adicionar()
     {
-        $produtos = Produto::all();
+        $produtos = Produto::
+        select('id_produto', 'id_categoria', 'ds_produto', 'data_aquisicao')
+        ->orderBy('ds_produto', 'ASC')->get();
+        
         return view("$this->view.adicionar", compact('produtos'));
     }
 
@@ -54,7 +57,9 @@ class ImagemController extends BaseController
 
     public function editar($id)
     {
-        $produtos = Produto::all();
+        $produtos = Produto::
+        select('id_produto', 'id_categoria', 'ds_produto', 'data_aquisicao')
+        ->orderBy('ds_produto', 'ASC')->get();
 
         $item = $this->classe::find($id);
         return view("$this->view.editar", compact('item', 'produtos'));
