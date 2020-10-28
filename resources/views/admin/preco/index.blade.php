@@ -44,7 +44,13 @@
                             <td>{{ $item->id_preco}}</td>
                             <td>{{ $item->ds_produto }}</td>
                             <td>{{ $item->p_desconto }}</td>
-                            <td>{{ $item->valor_venda }}</td>
+
+                            @if ($item->status_desconto == 'ativo')
+                                <td>R$ {{ money_format('%n', $item->valor_venda *= ((100 - $item->p_desconto)/100))}}</td>
+                                @else 
+                                    <td>R$ {{ money_format('%n', $item->valor_venda) }}</td>
+                            
+                            @endif
                             <td>
                                 <a class="btn btn-primary"
                                     href="{{route('admin.preco.editar', $item->id_preco)}}" style="background-color: #969faa; border: #969faa">

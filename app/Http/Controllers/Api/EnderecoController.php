@@ -46,7 +46,8 @@ class EnderecoController extends BaseController
     public function listarCliente ($id){
         $dados = EnderecoCliente::join('cliente', 'endereco_cliente.id_cliente', '=', 'cliente.id_cliente')
         ->join('endereco', 'endereco_cliente.id_endereco', '=', 'endereco.id_endereco')
-        ->select('endereco.*')
+        ->join('tipo_endereco', 'endereco.id_tipo_endereco', '=', 'tipo_endereco.id_tipo_endereco')
+        ->select('endereco.*','tipo_endereco.*')
         ->where('endereco_cliente.id_cliente','=', $id)
         ->get();
 

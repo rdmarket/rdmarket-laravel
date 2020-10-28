@@ -15,7 +15,7 @@ class CreateProdutoTable extends Migration
     {
         Schema::create('produto', function (Blueprint $table) {
             $table->id('id_produto');
-            $table->bigInteger('id_categoria')->unsigned();
+            $table->integer('id_categoria')->unsigned();
             $table->string('ds_produto');
             $table->date('data_aquisicao');
             $table->timestamps();

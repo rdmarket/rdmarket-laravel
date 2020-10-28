@@ -8,7 +8,7 @@
       </select>
 </div>
 <div class="form-group">
-    <label for="valor_aquisicao">Valor de aquisição/label>
+    <label for="valor_aquisicao">Valor de aquisição</label>
     <input type="text" class="form-control" id="valor_aquisicao" name="valor_aquisicao" value="{{ $item->valor_aquisicao ?? '' }}">
 </div>
 <div class="form-group">

@@ -11,7 +11,7 @@
             </div>
             <div class="col-3">
                 <a class="btn btn-success"
-                   href="{{ route('admin.produto.adicionar') }}" style="background-color: #77d353; border: #77d353">
+                   href="{{ route('admin.estoque.adicionar') }}" style="background-color: #77d353; border: #77d353">
                     Adicionar
                 </a>
             </div>
@@ -43,11 +43,11 @@
                             <td>{{ $item->qtd_produto_estoque }}</td>
                             <td>
                                 <a class="btn btn-primary"
-                                    href="{{route('admin.estoque.editar', $item->id_estoque)}}" style="background-color: #969faa; border: #969faa">
+                                    href="{{route('admin.estoque.editar', $item->id_produto)}}" style="background-color: #969faa; border: #969faa">
                                     Editar</a>
                             </td>
                             <td>
-                                <form action="{{route('admin.estoque.deletar', $item->id_estoque)}}" method="post"> 
+                                <form action="{{route('admin.estoque.deletar', $item->id_produto)}}" method="post"> 
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger" style="background-color: #C81E21; border: #C81E21">Deletar</button>
