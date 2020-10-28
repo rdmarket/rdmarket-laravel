@@ -20,8 +20,7 @@ class Autenticador
             $token = str_replace('Bearer ', '', $authorizationHeader);
             $dadosAutenticacao = JWT::decode($token, env('JWT_KEY'), ['HS256']);
 
-            $usuario = Usuario::where('CPF', $dadosAutenticacao->CPF)->first();
-
+            $usuario = Usuario::where('num_cpf', $dadosAutenticacao->num_cpf)->first();
             if (is_null($usuario)) {
                 throw new \Exception();
                 return response()->json('aqui',200);

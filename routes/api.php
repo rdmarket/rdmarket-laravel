@@ -18,46 +18,45 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-Route::group(['middleware' => 'autenticador'], function() {
-    Route::post('/logout', 'loginController@logout');
-
-    Route::get('/listar', 'Api\UsuarioController@listar');
+Route::group(['middleware' => 'autenticador'], function () {
+    Route::get('/logout', 'loginController@logout');
 });
 
 
 // Route::post('/enviarEmail','Api\ContatoController@enviarEmail')->name('api.enviarEmail');
 
 //rota checkout 
-Route::get('/realizarCompra/{id}','Api\checkout\CheckoutController@realizarCompra')->name('api.realizarCompra');
-Route::get('/devolverDadosCartao/{id}','Api\checkout\CheckoutController@devolverDadosCartao')->name('api.devolverDadosCartao');
+Route::get('/realizarCompra/{id}', 'Api\checkout\CheckoutController@realizarCompra')->name('api.realizarCompra');
+Route::get('/devolverDadosCartao/{id}', 'Api\checkout\CheckoutController@devolverDadosCartao')->name('api.devolverDadosCartao');
 
 
 //rota produtos
 Route::get('/produtos/listarCategorias', 'Api\ProdutoController@listarCategorias')
-->name('api.produtos.listarCategorias');
+    ->name('api.produtos.listarCategorias');
 Route::get('/produtos/listarPorTipo/{id_tipo_produto}', 'Api\ProdutoController@listarPorTipo')
-->name('api.produtos.listarPorTipo');
+    ->name('api.produtos.listarPorTipo');
 Route::get('/produtos/listarNovidades', 'Api\ProdutoController@listarNovidades')
-->name('api.produtos.listarNovidades');
+    ->name('api.produtos.listarNovidades');
 Route::get('/produtos/listarDescontos', 'Api\ProdutoController@listarDescontos')
-->name('api.produtos.listarDescontos');
+    ->name('api.produtos.listarDescontos');
 Route::apiResource('produtos', 'Api\ProdutoController');
 // Route::get('/produtos/listar', 'Api\ProdutoController@listar')
 // ->name('api.listar.produto');
 
 // Pedidos
-Route::get('pedidos/listarPorCliente/{id_cliente}','Api\PedidoController@listarPorCliente');
-Route::post('pedidos/gerarPedido','Api\PedidoController@gerarPedido');
+Route::get('pedidos/listarPorCliente/{id_cliente}', 'Api\PedidoController@listarPorCliente');
+Route::post('pedidos/gerarPedido', 'Api\PedidoController@gerarPedido');
 Route::apiResource('pedidos', 'Api\PedidoController');
 
 
 // Login
 Route::post('/login', 'loginController@login');
+Route::post('/cadastrar', 'loginController@cadastrar');
+Route::get('/usuario/{senha}', 'loginController@usuario');
 
-Route::post('/cadastrar', 'Api\UsuarioController@cadastrar');
 //rota endereco
-Route::get('/endereco/listarTipo/{id}','Api\EnderecoController@listarTipo')
-->name('api.endereco.listarTipo');
-Route::get('/endereco/listarCliente/{id}','Api\EnderecoController@listarCliente')
-->name('api.endereco.listarCliente');
+Route::get('/endereco/listarTipo/{id}', 'Api\EnderecoController@listarTipo')
+    ->name('api.endereco.listarTipo');
+Route::get('/endereco/listarCliente/{id}', 'Api\EnderecoController@listarCliente')
+    ->name('api.endereco.listarCliente');
 Route::apiResource('endereco', 'Api\EnderecoController');
