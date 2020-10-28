@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: laradock_mysql_1
--- Tempo de geração: 28-Out-2020 às 02:32
+-- Tempo de geração: 28-Out-2020 às 04:00
 -- Versão do servidor: 8.0.21
 -- versão do PHP: 7.4.9
 
@@ -110,7 +110,7 @@ INSERT INTO `produto` (`id_produto`, `id_categoria`, `ds_produto`, `data_aquisic
 (67, 18, 'Creme Dental Sensodyne Original 90 g', '2020-05-06', NULL, NULL),
 (68, 18, 'Anti-séptico Bucal Cepacol Flúor 250ml', '2020-05-04', NULL, NULL),
 (69, 18, 'Anti-séptico Bucal Listerine Menta Suave Zero Álcool Leve 500 Pague 350ml', '2020-08-29', NULL, NULL),
-(70, 18, ' Enxaguante Bucal Colgate Plax Fresh Mint 250ml', '2020-05-15', NULL, NULL),
+(70, 18, 'Enxaguante Bucal Colgate Plax Fresh Mint 250ml', '2020-05-15', NULL, NULL),
 (71, 18, 'Escova Dental Oral-B Protector Antibacterial L3P2', '2020-05-11', NULL, NULL),
 (72, 18, 'Escova Demtal Colgate Slim Soft Black 2un', '2020-06-25', NULL, NULL),
 (73, 18, 'Fio Dental Colgate Menta 50m', '2020-05-14', NULL, NULL),
