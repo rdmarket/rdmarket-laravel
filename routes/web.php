@@ -34,7 +34,7 @@ Route::put('/admin/clientes/atualizar/{id}', 'admin\ClienteController@atualizar'
 ->name('admin.clientes.atualizar');
 Route::delete('/admin/clientes/deletar/{id}', 'admin\ClienteController@deletar')
 ->name('admin.clientes.deletar');
-});
+
 
 //Rotas de Pedidos
 Route::get('/admin/pedidos', 'admin\PedidoController@index')
@@ -107,5 +107,5 @@ Route::put('/admin/imagem/atualizar/{id}', 'admin\ImagemController@atualizar')
 Route::delete('/admin/imagem/deletar/{id}', 'admin\ImagemController@deletar')
 ->name('admin.imagem.deletar');
 
-
+});
 Auth::routes();

@@ -85,6 +85,7 @@ class ProdutoController extends BaseController
         ->select('produto.id_produto', 'produto.ds_produto', 'produto.data_aquisicao', 'categoria_produto.ds_categoria',
                  'preco.valor_venda', 'preco.p_desconto','preco.status_desconto', 'estoque.qtd_produto_estoque','imagem.*')
         ->get();
+        return response()->json($dados, 200);
         $dataAtual = Carbon::now();
 
         foreach($dados as $dado)
@@ -116,6 +117,9 @@ class ProdutoController extends BaseController
         ->select('produto.id_produto', 'produto.ds_produto', 'produto.data_aquisicao', 'categoria_produto.ds_categoria',
                  'preco.valor_venda','preco.status_desconto', 'preco.p_desconto', 'estoque.qtd_produto_estoque','imagem.*')
         ->get();
+
+
+        return response()->json($dados, 200);
 
         foreach($dados as $dado)
         {
@@ -158,8 +162,7 @@ class ProdutoController extends BaseController
 
     public function listarBanner()
     {
-        $dados = $this->classe::join('imagem', 'produto.id_produto', '=', 'imagem.id_produto')
-        ->where('imagem.ds_imagem_produto','=','banner')
+        $dados = DB::table('imagem')->where('imagem.ds_imagem_produto','=','banner')
         ->select('imagem.*')
         ->get();
 
