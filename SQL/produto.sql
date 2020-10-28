@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: laradock_mysql_1
--- Tempo de geração: 27-Out-2020 às 20:55
+-- Tempo de geração: 28-Out-2020 às 02:32
 -- Versão do servidor: 8.0.21
 -- versão do PHP: 7.4.9
 
@@ -135,7 +135,7 @@ INSERT INTO `produto` (`id_produto`, `id_categoria`, `ds_produto`, `data_aquisic
 (92, 4, 'Farinha de mandioca Hikari torrada 500G', '2020-06-04', NULL, NULL),
 (93, 4, 'Farinha de Arroz urbano sem glúten 1KG', '2020-05-20', NULL, NULL),
 (94, 5, 'Açafrão da terra Kitano 50G', '2020-02-18', NULL, NULL),
-(95, 5, 'Alho agro picado sem sal 200G', '2020-10-09', NULL, NULL),
+(95, 5, 'Alho agro picado sem sal 200G', '2020-09-03', NULL, NULL),
 (96, 5, 'Alho Kitano granulado 60G', '2020-05-01', NULL, NULL),
 (97, 5, 'Azeite andorinha de oliva puro vidro 500ML', '2020-02-09', NULL, NULL),
 (98, 5, 'Azeite de dendê Cepêra 100ML', '2020-01-03', NULL, NULL),
@@ -154,15 +154,15 @@ INSERT INTO `produto` (`id_produto`, `id_categoria`, `ds_produto`, `data_aquisic
 (111, 20, 'Creme de Tratamento Aussie 3 minutos Miracle Curls 236ml', '2020-06-01', NULL, NULL),
 (112, 20, 'Gel NY. Looks fixação forte brilho molhado 240g', '2020-05-13', NULL, NULL),
 (113, 20, 'Cera capilar modeladora Bozzano efeito seco 230g', '2020-06-03', NULL, NULL),
-(114, 6, 'Alcaparra cepera ao vinagre em conserva 65G', '2020-10-30', NULL, NULL),
-(115, 6, 'Aspargo raiola 200G', '2020-10-30', NULL, NULL),
+(114, 6, 'Alcaparra cepera ao vinagre em conserva 65G', '2020-09-04', NULL, NULL),
+(115, 6, 'Aspargo raiola 200G', '2020-09-01', NULL, NULL),
 (116, 6, 'Atum claro em azeite de oliva Gomes da Costa 170G', '2020-09-10', NULL, NULL),
 (117, 6, 'Azeitona la pastina preta fatiada 160G', '2020-09-12', NULL, NULL),
 (118, 6, 'Azeitona verde em conserva recheada saborosa 150G', '2020-08-30', NULL, NULL),
 (119, 6, 'Cebolinha raiola conserva 200G', '2020-08-17', NULL, NULL),
 (120, 6, 'Champignons fatiados aica 100G', '2020-04-28', NULL, NULL),
 (121, 6, 'Dueto milho e ervilha em conserva predilecta lata 179G', '2020-03-20', NULL, NULL),
-(122, 6, 'Ervilha em conserva predilecta lata 170G', '2020-10-13', NULL, NULL),
+(122, 6, 'Ervilha em conserva predilecta lata 170G', '2020-09-02', NULL, NULL),
 (123, 6, 'Grão de bico em conserva knor 170G', '2020-01-22', NULL, NULL),
 (124, 21, 'Antitranspirante Aerosol Rexona Clinical Classic 150ml', '2020-06-15', NULL, NULL),
 (125, 21, 'Antitranspirante Aerosol Rexona Men Clinical Clean 150ml', '2020-06-15', NULL, NULL),
@@ -178,7 +178,7 @@ INSERT INTO `produto` (`id_produto`, `id_categoria`, `ds_produto`, `data_aquisic
 (135, 7, 'Batata frita lisa peito de peru elma chips pacote 45G', '2020-04-10', NULL, NULL),
 (136, 7, 'Batata lay\'s classica 96G', '2020-05-10', NULL, NULL),
 (137, 7, 'Batata original ruffles 300G', '2020-09-01', NULL, NULL),
-(138, 7, 'Biscoito adria palito chocolate crocante 70G', '2020-10-03', NULL, NULL),
+(138, 7, 'Biscoito adria palito chocolate crocante 70G', '2020-09-04', NULL, NULL),
 (139, 7, 'Biscoito adria tortinha sabor chocolate suiço 160G', '2020-02-28', NULL, NULL),
 (140, 7, 'Biscoito amanteigado  chocolate marilan 330G', '2020-03-10', NULL, NULL),
 (141, 7, 'Biscoito bauducco cookies original 100G', '2020-05-01', NULL, NULL),
@@ -203,7 +203,7 @@ INSERT INTO `produto` (`id_produto`, `id_categoria`, `ds_produto`, `data_aquisic
 (160, 8, 'Confeito m&m\'s chocolate ao leite 80G', '2020-03-30', NULL, NULL),
 (161, 8, 'Confeito m&m\'s ovinho de amendoim 80G', '2020-03-09', NULL, NULL),
 (162, 8, 'Doce de amendoim paçoquita santa helena 350G', '2020-04-05', NULL, NULL),
-(163, 8, 'Doce de leite moça 390G', '2020-10-10', NULL, NULL),
+(163, 8, 'Doce de leite moça 390G', '2020-09-05', NULL, NULL),
 (164, 8, 'Chocottone Bauducco Maxi Caramel 500g', '2020-10-20', NULL, NULL),
 (165, 8, 'Chocottone Bauducco Trufa 500g', '2020-10-15', NULL, NULL),
 (166, 11, 'Tender bolinha Sadia defumado aprox 1,2kg', '2020-10-03', NULL, NULL),
