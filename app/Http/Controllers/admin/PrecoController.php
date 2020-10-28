@@ -6,6 +6,7 @@ use App\Models\Produto;
 use App\Models\Preco;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent;
 
 class PrecoController extends BaseController
 {
@@ -27,7 +28,7 @@ class PrecoController extends BaseController
 
     public function adicionar()
     {
-        $produtos = Produto::all();
+        $produtos = Produto::select('id_produto', 'id_categoria', 'ds_produto', 'data_aquisicao')->orderBy('ds_produto', 'ASC')->get();
         
         return view("$this->view.adicionar", compact('produtos'));
     }

@@ -10,6 +10,7 @@
     }
     .style-dropdown {
         background-color: #c81e21!important;
+        border: #c81e21!important;
     }
 </style>
 
@@ -30,7 +31,7 @@
                 <li class="nav-item">
                     <!-- <a class="nav-link" href="{{ route('admin.produto')}}">Produtos</a> -->
                     <div class="btn-group">
-                        <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button type="button" class="btn btn-danger dropdown-toggle style-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Produtos
                         </button>
                         <div class="dropdown-menu">
@@ -69,7 +70,7 @@
                             <a class="dropdown-item" href="#">Estoque</a>
                         </div>
                     </div> -->
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle style-dropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         Produtos<span class="caret"></span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

@@ -46,7 +46,7 @@
                             <td>{{ $item->id_produto}}</td>
                             <td>{{ $item->ds_categoria }}</td>
                             <td>{{ $item->ds_produto }}</td>
-                            <td>{{ $item->valor_venda }}</td>
+                            <td> R${{ money_format('%n', $item->valor_venda)}}</td>
                             <td>{{ \Carbon\Carbon::parse($item->data_aquisicao)->format('d/m/Y') }}</td>
                             <td>{{ $item->qtd_produto_estoque }}</td>
                             <td>
