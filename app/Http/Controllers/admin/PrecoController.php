@@ -20,7 +20,7 @@ class PrecoController extends BaseController
     {   
         $itens = $this->classe::join('produto', 'preco.id_produto', '=', 'produto.id_produto')
         ->select('preco.*', 'produto.ds_produto')
-        ->get();
+        ->paginate(20);
 
         $mensagem = $req->session()->get('mensagem');
         return view("$this->view.index", compact('itens', 'mensagem'));

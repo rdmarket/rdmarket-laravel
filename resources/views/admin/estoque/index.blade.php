@@ -57,6 +57,8 @@
                     @endforeach
                 </tbody>
             </table>
+            
         </div>
+        {{$itens->links()}}
     </div>
 @endsection

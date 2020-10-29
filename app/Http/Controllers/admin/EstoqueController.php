@@ -21,7 +21,7 @@ class EstoqueController extends BaseController
         $itens = $this->classe::
         join('produto', 'estoque.id_produto', '=', 'produto.id_produto')
         ->select('estoque.*', 'produto.ds_produto')
-        ->get();
+        ->paginate(20);
 
         $mensagem = $req->session()->get('mensagem');
         return view("$this->view.index", compact('itens', 'mensagem'));

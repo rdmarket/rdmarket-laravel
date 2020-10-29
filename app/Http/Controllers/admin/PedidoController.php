@@ -20,7 +20,7 @@ class PedidoController extends BaseController
                               ->join('status_pedido', 'pedido.id_status_pedido', '=', 'status_pedido.id_status_pedido')
                               ->select('pedido.data_pedido','pedido.id_pedido','cliente.nm_cliente',
                                        'pedido.nr_pedido','forma_pagamento.ds_forma_pagamento','pedido.vlr_total_pedido',
-                                       'pedido.qtd_total_produtos', 'status_pedido.desc_status_pedido')->get();
+                                       'pedido.qtd_total_produtos', 'status_pedido.desc_status_pedido')->paginate(20);
                         
                         
       $mensagem = $req->session()->get('mensagem');
