@@ -1,36 +1,13 @@
-### categoria_produtos ###
-INSERT INTO `categoria_produto` (
-    id_categoria,
-    ds_categoria)
-    VALUES (1, 'Alimentos');
-    
-    INSERT INTO `categoria_produto` (
-    id_categoria,
-    ds_categoria)
-    VALUES (2, 'Bebidas');
-    
-    INSERT INTO `categoria_produto` (
-    id_categoria,
-    ds_categoria)
-    VALUES (3, 'Higiene');
-    
-    INSERT INTO `categoria_produto` (
-    id_categoria,
-    ds_categoria)
-    VALUES (4, 'Limpeza');
-
-
-
 ### forma_pagamento ###
 INSERT into `forma_pagamento` (
     id_forma_pagamento,
     ds_forma_pagamento)
-    VALUES (1, 'Débito');
+    VALUES (1, 'Crédito');
     
     INSERT into `forma_pagamento` (
     id_forma_pagamento,
     ds_forma_pagamento)
-    VALUES (2, 'Crédito');
+    VALUES (2, 'Débito');
 
 
 

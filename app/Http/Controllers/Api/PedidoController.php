@@ -26,7 +26,7 @@ class PedidoController extends BaseController
         $pedido->id_cliente = $req['id_cliente'];
         $pedido->id_forma_pagamento = $req['id_forma_pagamento'];
         $pedido->nr_pedido = round(rand(1,99999));
-        $pedido->id_status_pedido = 1;
+        $pedido->id_status_pedido = 2;
         $pedido->id_endereco = $req['id_endereco'];
         $pedido->data_pedido = Carbon::now()->format('Y-m-d G:H:i');
         $pedido->nr_parcelas = $req['nr_parcelas'];

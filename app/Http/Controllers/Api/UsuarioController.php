@@ -12,7 +12,7 @@ class UsuarioController extends Controller
     public function cadastrar(Request $req)
     {
         $dados = $req->all();
-        $dados['senha'] = Hash::make($dados['senha']);
+        $dados['vlr_senha'] = Hash::make($dados['vlr_senha']);
 
         return response()->json(Usuario::create($dados), 201);
     }

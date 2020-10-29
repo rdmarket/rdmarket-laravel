@@ -46,9 +46,6 @@ class CheckoutController extends BaseController
         $dado = NotaFiscalController::gerarNotaFiscal($id_pedido);
         
 
-        DB::table('pedido')
-                ->where('id_pedido', $id_pedido)
-                ->update(['id_status_pedido' => 2]);
 
         if(empty($dado))
             return response()->json('Não existe produtos adicionados a este pedido',404);
