@@ -89,7 +89,7 @@ class PedidoController extends BaseController
         ->where('pedido.id_cliente','=',$id)
         ->where('status_pedido.desc_status_pedido', 'not like', "%Aguardando pagamento%")
         ->select('pedido.id_pedido','pedido.nr_pedido','pedido.vlr_total_pedido',
-                'pedido.qtd_total_produtos','pedido.data_pedido','status_pedido.desc_status_pedido')->get();
+                'pedido.qtd_total_produtos','pedido.data_pedido','status_pedido.desc_status_pedido')->orderBy('pedido.id_pedido', 'DESC')->get();
 
         if (empty($dados->all())) {
             return response()->json('Cliente nao encontrado', 404);
