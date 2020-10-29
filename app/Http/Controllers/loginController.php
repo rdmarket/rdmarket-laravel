@@ -24,7 +24,7 @@ class loginController extends Controller
         $usuario = Usuario::where('num_cpf', $request->num_cpf)->first();
 
         if ((is_null($usuario)) || !Hash::check($request->vlr_senha, $usuario->vlr_senha)) {
-            return response()->json('Usuario nao cadastrado',401);
+            return response()->json('Usuario nao cadastrado', 401);
         }
 
         $token = JWT::encode(
@@ -80,12 +80,11 @@ class loginController extends Controller
             $end = 3;
         }
         $endereco['id_tipo_endereco'] = $end;
-
         $endereco->save();
         // ENDEREÇO CLIENTE
+        $endereco_cliente['id_endereco'] = $endereco['id'];
         $endereco_cliente['id_cliente'] = $cliente['id_cliente'];
-        $endereco_cliente['id_endereco'] = $endereco['id_endereco'];
-
+        EnderecoCliente::create($endereco_cliente);
 
         // CONTATO
         $contatos['id_cliente'] = $cliente['id_cliente'];
@@ -93,9 +92,6 @@ class loginController extends Controller
         $contatos['num_celular'] = $request->get('num_celular');
         $contatos['num_fixo'] = $request->get('num_fixo');
 
-        // Cliente::create($cliente);
-        // Endereco::create($endereco);
-        // EnderecoCliente::create($endereco_cliente);
         Contato::create($contatos);
 
 
