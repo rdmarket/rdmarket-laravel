@@ -85,14 +85,16 @@ class ProdutoController extends BaseController
         ->select('produto.id_produto', 'produto.ds_produto', 'produto.data_aquisicao', 'categoria_produto.ds_categoria',
                  'preco.valor_venda', 'preco.p_desconto','preco.status_desconto', 'estoque.qtd_produto_estoque','imagem.*')
         ->get();
-        return response()->json($dados, 200);
+        
+        //return response()->json($dados, 200);
+        
         $dataAtual = Carbon::now();
-
+        
         foreach($dados as $dado)
         {
             $dataAquisicao = Carbon::createFromFormat('Y-m-d', $dado->data_aquisicao);
             $tempoEntreDatas = $dataAquisicao->diffInDays($dataAtual);
-
+            
             if ($tempoEntreDatas < 30){
                 $itens[] = $dado;
             }
