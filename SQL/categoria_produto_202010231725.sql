@@ -25,7 +25,7 @@ INSERT INTO `categoria_produto` (id_categoria,ds_categoria,created_at,updated_at
 INSERT INTO `categoria_produto` (id_categoria,ds_categoria,created_at,updated_at) VALUES 
 (21,'Desodorantes',NULL,NULL)
 ,(22,'Sabonetes e acessórios para banho',NULL,NULL)
-,(23,'Barda e depilação',NULL,NULL)
+,(23,'Barba e depilação',NULL,NULL)
 ,(24,'Produtos infantis',NULL,NULL)
 ,(25,'Cotonetes e algodões',NULL,NULL)
 ,(26,'Limpeza da casa',NULL,NULL)

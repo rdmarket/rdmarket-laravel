@@ -30,14 +30,19 @@ class ProdutoController extends BaseController
 
     public function adicionar()
     {
-        $categorias = CategoriaProduto::all();
+        $categorias = CategoriaProduto::
+        select('id_categoria', 'ds_categoria')
+        ->orderBy('ds_categoria', 'ASC')->get();
         
         return view("$this->view.adicionar", compact('categorias'));
     }
 
     public function editar($id)
     {
-        $categorias = CategoriaProduto::all();
+        $categorias = CategoriaProduto::
+        select('id_categoria', 'ds_categoria')
+        ->orderBy('ds_categoria', 'ASC')->get();
+        
         $item = $this->classe::find($id);
         return view("$this->view.editar", compact('item', 'categorias'));
 
