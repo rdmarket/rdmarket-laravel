@@ -22,7 +22,7 @@ class ProdutoController extends BaseController
         ->join('categoria_produto', 'produto.id_categoria', '=', 'categoria_produto.id_categoria')
         ->join('estoque', 'produto.id_produto', '=', 'estoque.id_produto')
         ->select('produto.*', 'preco.*', 'categoria_produto.*', 'estoque.*')
-        ->get();
+        ->paginate(20);
 
         $mensagem = $req->session()->get('mensagem');
         return view("$this->view.index", compact('itens', 'mensagem'));

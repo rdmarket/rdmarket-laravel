@@ -22,7 +22,7 @@ class ClienteController extends BaseController
       //   ->join('endereco_cliente', 'cliente.id_cliente', '=', 'endereco_cliente.id_cliente')
       //   ->join('endereco', 'endereco_cliente.id_endereco', '=', 'endereco.id_endereco')
         ->select('cliente.*', 'contato.*')
-        ->get();
+        ->paginate(20);
          
         $mensagem = $req->session()->get('mensagem');
         return view("$this->view.index", compact('itens', 'mensagem'));

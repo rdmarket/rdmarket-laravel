@@ -21,7 +21,7 @@ class ImagemController extends BaseController
         $itens = $this->classe::
         join('produto', 'imagem.id_produto', '=', 'produto.id_produto')
         ->select('imagem.*', 'produto.ds_produto')
-        ->get();
+        ->paginate(20);
 
         $mensagem = $req->session()->get('mensagem');
         return view("$this->view.index", compact('itens', 'mensagem'));

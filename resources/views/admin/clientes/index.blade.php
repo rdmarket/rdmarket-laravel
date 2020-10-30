@@ -44,6 +44,7 @@
                     @endforeach
                 </tbody>
             </table>
+            {!!$itens->links()!!}
         </div>
     </div>
 @endsection
