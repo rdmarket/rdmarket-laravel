@@ -33,9 +33,13 @@ Route::apiResource('checkout', 'Api\checkout\CheckoutController');
 
 
 //rota produtos
-Route::get('/produtos/listarCategorias', 'Api\ProdutoController@listarCategorias')
 
+Route::get('/produtos/listarPorPesquisa/{keyword}', 'Api\ProdutoController@listarPorPesquisa')
+->name('api.produtos.listarPorPesquisa');
+
+Route::get('/produtos/listarCategorias', 'Api\ProdutoController@listarCategorias')
 ->name('api.produtos.listarCategorias');
+
 Route::get('/produtos/listarBanner', 'Api\ProdutoController@listarBanner')
 ->name('api.produtos.listarBanner');
 Route::get('/produtos/listarPorTipo/{id_tipo_produto}', 'Api\ProdutoController@listarPorTipo')
