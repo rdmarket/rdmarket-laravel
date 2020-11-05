@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\admin;
 
 use App\Models\CategoriaProduto;
+use App\Models\Preco;
+use App\Models\Estoque;
 use App\Models\Produto;
 use App\Http\Controllers\Controller;
 
@@ -46,5 +48,26 @@ class ProdutoController extends BaseController
         $item = $this->classe::find($id);
         return view("$this->view.editar", compact('item', 'categorias'));
 
+    }
+
+
+    public function deletar(Request $req, $id)
+    {
+        // $preco = Preco::select('preco.*')->where('id_produto', '=', $id);
+        // $preco->delete();
+
+        // $estoque = Estoque::select('estoque.*')>where('id_produto', '=', $id);
+        // $estoque->delete();
+
+        $item = $this->classe::find($id);
+        $item->delete();
+
+        $req->session()
+            ->flash(
+                'mensagem',
+                "Removido com sucesso"
+            );
+
+        return redirect()->route("$this->view");
     }
 }
