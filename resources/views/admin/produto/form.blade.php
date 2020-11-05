@@ -8,11 +8,11 @@
 </div>
 
 <div class="form-group">
-      <label for="id_categoria ">Categoria</label>
+    <label for="id_categoria ">Categoria</label>
     <select id="id_categoria " class="form-control" name="id_categoria" value="{{ $item->id_categoria ?? ''}}">
         <option selected>Escolha uma categoria</option>
         @foreach ($categorias as $categoria)
             <option value= "{{ $categoria->id_categoria ?? ''}}">{{ $categoria->ds_categoria ?? ''}}</option>
         @endforeach
-      </select>
+    </select>
 </div>

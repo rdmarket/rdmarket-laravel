@@ -6,6 +6,15 @@
 @section('conteudo')
     <div class="container">
         <h3>Adicionar Estoque</h3>
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
         <div class="row">
             <form action="{{ route('admin.estoque.salvar') }}" method="post"
                 enctype="multipart/form-data">

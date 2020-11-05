@@ -35,6 +35,32 @@ class PrecoController extends BaseController
         return view("$this->view.adicionar", compact('produtos'));
     }
 
+    public function salvar(Request $req)
+    {
+        $validated = $req->validate([
+            'id_produto'        => 'required',
+            'valor_aquisicao'   => 'required',
+            'valor_venda'       => 'required',
+            'status_desconto'   => 'required',
+        ]);
+
+        $item = $req->all();
+
+        if ($req->hasFile('imagem')) {
+            $item['imagem'] = $this->tratarImagem($req);
+        }
+
+        $this->classe::create($item);
+
+        $req->session()
+          ->flash(
+              'mensagem',
+              "Adicionado com sucesso"
+          );
+
+        return redirect()->route("$this->view");
+    }
+
     public function editar($id)
     {
         $produtos = Produto::

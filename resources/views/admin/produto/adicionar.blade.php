@@ -5,9 +5,18 @@
 
 @section('conteudo')
     <div class="container">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <h3>Adicionar Produto</h3>
         <div class="row">
-            <form action="{{ route('admin.produto.salvar') }}" method="post"
+            <form action="{{ route('admin.produto.salvar'{{--'produto.validado.post'--}}) }}" method="post"
                 enctype="multipart/form-data">
                 @csrf
                 @include('admin.produto.form')
