@@ -68,6 +68,9 @@ Route::post('/login', 'loginController@login');
 Route::post('/cadastrar', 'loginController@cadastrar');
 Route::get('/usuario/{senha}', 'loginController@usuario');
 
+//usuario
+Route::post('/buscarUsuario', 'Api\UsuarioController@buscarCliente');
+
 //rota endereco
 Route::get('/endereco/listarTipo/{id}', 'Api\EnderecoController@listarTipo')
     ->name('api.endereco.listarTipo');
