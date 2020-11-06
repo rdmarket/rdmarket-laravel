@@ -12,6 +12,30 @@ use Illuminate\Http\Request;
 
 class ProdutoController extends BaseController
 {
+    public function salvar(Request $req)
+    {
+        $validated = $req->validate([
+            'id_categoria'      => 'required',
+            'ds_produto'        => 'required|min:3|max:600',
+            'data_aquisicao'    => 'required|date',
+        ]);
+        $item = $req->all();
+
+        if ($req->hasFile('imagem')) {
+            $item['imagem'] = $this->tratarImagem($req);
+        }
+
+        $this->classe::create($item);
+
+        $req->session()
+          ->flash(
+              'mensagem',
+              "Adicionado com sucesso"
+          );
+
+        return redirect()->route("$this->view");
+    }
+
     public function __construct()
     {
          $this->classe = Produto::class;

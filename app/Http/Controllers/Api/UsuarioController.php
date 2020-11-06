@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Usuario;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 
 class UsuarioController extends Controller
 {
@@ -22,4 +23,28 @@ class UsuarioController extends Controller
 
         return response()->json($usuarios, 200);
     }
+
+    public function buscarCliente(Request $req){
+        $usuarios = DB::table('cliente')->join('contato','cliente.id_cliente','=','contato.id_cliente')
+        ->where('cliente.num_cpf','=',$req->cpf)
+        ->select('cliente.*','contato.*')
+        ->get();
+
+        if(empty($usuarios)){
+            return response()->json("Dados não encontrados",404);
+        }
+
+        if($req->email != $usuarios[0]->ds_email){
+            return response()->json("Email não encontrado",404);
+        }
+
+        $req->senha = Hash::make($req->senha);
+
+        DB::table('cliente')
+            ->where('cliente.num_cpf', $req->cpf)
+            ->update(['vlr_senha' => $req->senha]);
+
+        return response()->json("Senha atualizada com sucesso", 200);
+    }
+
 }
