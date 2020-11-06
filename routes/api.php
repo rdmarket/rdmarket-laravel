@@ -68,6 +68,9 @@ Route::post('/login', 'loginController@login');
 Route::post('/cadastrar', 'loginController@cadastrar');
 Route::get('/usuario/{senha}', 'loginController@usuario');
 
+//email
+Route::post('/email','Api\EmailController@email');
+
 //usuario
 Route::post('/buscarUsuario', 'Api\UsuarioController@buscarCliente');
 
