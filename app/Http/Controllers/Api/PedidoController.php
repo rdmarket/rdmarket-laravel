@@ -82,6 +82,25 @@ class PedidoController extends BaseController
         return response()->json($dados, 200);
     }
 
+    public function pesquisarPedidoPorCliente($idCliente, $idPedido)
+    {
+        $dados = Pedido::join('cliente', 'pedido.id_cliente', '=', 'cliente.id_cliente')
+        ->join('status_pedido', 'pedido.id_status_pedido', '=', 'status_pedido.id_status_pedido')
+        ->select('pedido.id_pedido','pedido.nr_pedido','pedido.vlr_total_pedido',
+                'pedido.qtd_total_produtos','pedido.data_pedido','status_pedido.desc_status_pedido')
+        ->where('pedido.id_cliente','=',$idCliente)
+        ->where(function ($query) use ($idPedido) {
+            $query->where ('pedido.id_pedido', 'like', "%$idPedido%")
+                ->orWhere('pedido.nr_pedido', 'like', "%$idPedido%");
+            })->get();
+        
+        if (empty($dados->all())) {
+            return response()->json('Pedido nao encontrado', 404);
+        }
+
+        return response()->json($dados, 200);
+    }
+
     public function listarPorCliente($id)
     {
         $dados = Pedido::join('cliente', 'pedido.id_cliente', '=', 'cliente.id_cliente')

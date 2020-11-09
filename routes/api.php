@@ -54,6 +54,7 @@ Route::apiResource('produtos', 'Api\ProdutoController');
 // ->name('api.listar.produto');
 
 // Pedidos
+Route::get ('pedidos/pesquisarPedidoPorCliente/{idCliente}/{idPedido}', 'Api\PedidoController@pesquisarPedidoPorCliente');
 Route::get('pedidos/listarPorCliente/{id_cliente}', 'Api\PedidoController@listarPorCliente');
 Route::post('pedidos/gerarPedido', 'Api\PedidoController@gerarPedido');
 Route::apiResource('pedidos', 'Api\PedidoController');
