@@ -27,7 +27,6 @@ class BaseController extends Controller
     {
         $item = $req->all();
 
-
         if ($req->hasFile('imagem')) {
             $item['imagem'] = $this->tratarImagem($req);
         }

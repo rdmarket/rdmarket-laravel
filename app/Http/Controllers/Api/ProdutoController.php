@@ -38,6 +38,26 @@ class ProdutoController extends BaseController
         return response()->json($itens, 200);
     }
 
+    public function listarPorPesquisa($keyword)
+    {
+        $itens = $this->classe::join('categoria_produto', 'produto.id_categoria', '=', 'categoria_produto.id_categoria')
+        ->join('preco', 'produto.id_produto', '=', 'preco.id_produto')
+        ->join('estoque', 'produto.id_produto', '=', 'estoque.id_produto')
+        ->join('imagem', 'produto.id_produto', '=', 'imagem.id_produto')
+        ->select('produto.id_produto', 'produto.ds_produto', 'produto.data_aquisicao', 'categoria_produto.ds_categoria',
+                 'preco.valor_venda', 'preco.status_desconto','preco.p_desconto', 'estoque.qtd_produto_estoque','imagem.*')
+        ->where('imagem.ds_imagem_produto','=','frente')
+        ->where('produto.ds_produto', 'like', '%'.$keyword.'%')
+        ->orWhere('categoria_produto.ds_categoria', 'like', '%'.$keyword.'%')
+        ->get();
+
+        if (empty($itens->all())) {
+            return response()->json('Item não encontrado.', 404);
+        }
+
+        return response()->json($itens, 200);
+    }
+
     public function listarCategorias()
     {
         $itens = CategoriaProduto::all();

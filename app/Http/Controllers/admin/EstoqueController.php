@@ -41,6 +41,10 @@ class EstoqueController extends BaseController
         $item = $req->all();
         $estoqueExistente = $this->classe::all();
         
+        $validated = $req->validate([
+            'id_produto'            => 'required',
+            'qtd_produto_estoque'   => 'required|numeric',
+        ]);
 
         foreach($estoqueExistente as $estoque)
         {

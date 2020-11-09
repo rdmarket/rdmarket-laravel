@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\admin;
 
 use App\Models\CategoriaProduto;
+use App\Models\Preco;
+use App\Models\Estoque;
 use App\Models\Produto;
 use App\Http\Controllers\Controller;
 
@@ -10,6 +12,30 @@ use Illuminate\Http\Request;
 
 class ProdutoController extends BaseController
 {
+    public function salvar(Request $req)
+    {
+        $validated = $req->validate([
+            'id_categoria'      => 'required',
+            'ds_produto'        => 'required|min:3|max:600',
+            'data_aquisicao'    => 'required|date',
+        ]);
+        $item = $req->all();
+
+        if ($req->hasFile('imagem')) {
+            $item['imagem'] = $this->tratarImagem($req);
+        }
+
+        $this->classe::create($item);
+
+        $req->session()
+          ->flash(
+              'mensagem',
+              "Adicionado com sucesso"
+          );
+
+        return redirect()->route("$this->view");
+    }
+
     public function __construct()
     {
          $this->classe = Produto::class;
@@ -46,5 +72,26 @@ class ProdutoController extends BaseController
         $item = $this->classe::find($id);
         return view("$this->view.editar", compact('item', 'categorias'));
 
+    }
+
+
+    public function deletar(Request $req, $id)
+    {
+        // $preco = Preco::select('preco.*')->where('id_produto', '=', $id);
+        // $preco->delete();
+
+        // $estoque = Estoque::select('estoque.*')>where('id_produto', '=', $id);
+        // $estoque->delete();
+
+        $item = $this->classe::find($id);
+        $item->delete();
+
+        $req->session()
+            ->flash(
+                'mensagem',
+                "Removido com sucesso"
+            );
+
+        return redirect()->route("$this->view");
     }
 }

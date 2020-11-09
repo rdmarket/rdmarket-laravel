@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Models\Cliente;
+use App\Models\Contato;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -136,4 +137,5 @@ class ClienteController extends BaseController
          return true;
       }
    }
+
 }
