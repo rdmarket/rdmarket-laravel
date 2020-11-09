@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Models\Estoque;
 use App\Models\Pedido;
 use App\Models\ItemPedido;
 use Illuminate\Http\Request;
@@ -48,6 +49,10 @@ class PedidoController extends BaseController
             $itemPedido->cd_status_item_pedido = 1; // status item pedido
             $itemPedido->data_item_pedido = Carbon::now()->format('Y-m-d G:H:i');
             $itemPedido->save();
+
+            // $stoq = Estoque::find($item['id']);
+            // $stoq->update(['qtd_produto_estoque'=>$stoq->qtd_produto_estoque-$item['qtd']]);
+
 
             //incremento a cada item pedido
             $valorTotalPedido += $itemPedido->vlr_total_item_pedido;
