@@ -33,9 +33,13 @@ Route::apiResource('checkout', 'Api\checkout\CheckoutController');
 
 
 //rota produtos
-Route::get('/produtos/listarCategorias', 'Api\ProdutoController@listarCategorias')
 
+Route::get('/produtos/listarPorPesquisa/{keyword}', 'Api\ProdutoController@listarPorPesquisa')
+->name('api.produtos.listarPorPesquisa');
+
+Route::get('/produtos/listarCategorias', 'Api\ProdutoController@listarCategorias')
 ->name('api.produtos.listarCategorias');
+
 Route::get('/produtos/listarBanner', 'Api\ProdutoController@listarBanner')
 ->name('api.produtos.listarBanner');
 Route::get('/produtos/listarPorTipo/{id_tipo_produto}', 'Api\ProdutoController@listarPorTipo')
@@ -65,9 +69,33 @@ Route::post('/login', 'loginController@login');
 Route::post('/cadastrar', 'loginController@cadastrar');
 Route::get('/usuario/{senha}', 'loginController@usuario');
 
+//email
+Route::post('/email','Api\EmailController@email');
+
+//usuario
+Route::post('/buscarUsuario', 'Api\UsuarioController@buscarCliente');
+
 //rota endereco
 Route::get('/endereco/listarTipo/{id}', 'Api\EnderecoController@listarTipo')
     ->name('api.endereco.listarTipo');
 Route::get('/endereco/listarCliente/{id}', 'Api\EnderecoController@listarCliente')
     ->name('api.endereco.listarCliente');
+Route::get('/endereco/listarPorCliente/{id}', 'Api\EnderecoController@listarPorCliente')
+    ->name('api.endereco.listarPorCliente');
+Route::post('/endereco/adicionarEndereco', 'Api\EnderecoController@adicionarEndereco')
+    ->name('api.endereco.adicionarEndereco');
 Route::apiResource('endereco', 'Api\EnderecoController');
+
+//rota cartao
+Route::get('/cartao/listarPorCliente/{id}', 'Api\CartaoController@listarPorCliente')
+    ->name('api.cartao.listarPorCliente');
+Route::post('/cartao/adicionarCartao', 'Api\CartaoController@adicionarCartao')
+    ->name('api.cartao.adicionarCartao');
+Route::get('/cartao/editarCartao/{id}', 'Api\CartaoController@editarCartao')
+    ->name('api.cartao.editarCartao');
+Route::put('/cartao/atualizarCartao/{id}', 'Api\CartaoController@atualizarCartao')
+    ->name('api.cartao.atualizarCartao');
+
+//rota cliente
+Route::get('/cliente/listarDados/{id}', 'Api\ClienteController@listarDados')
+    ->name('api.cliente.listarDados');
