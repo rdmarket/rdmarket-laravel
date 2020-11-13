@@ -115,7 +115,7 @@ class ProdutoController extends BaseController
             $dataAquisicao = Carbon::createFromFormat('Y-m-d', $dado->data_aquisicao);
             $tempoEntreDatas = $dataAquisicao->diffInDays($dataAtual);
             
-            if ($tempoEntreDatas < 30){
+            if ($tempoEntreDatas < 60){
                 $itens[] = $dado;
             }
         }
