@@ -58,6 +58,26 @@ class ProdutoController extends BaseController
         return response()->json($itens, 200);
     }
 
+    public function listarPorPesquisaPaginate($keyword)
+    {
+        $itens = DB::table('produto')->join('categoria_produto', 'produto.id_categoria', '=', 'categoria_produto.id_categoria')
+        ->join('preco', 'produto.id_produto', '=', 'preco.id_produto')
+        ->join('estoque', 'produto.id_produto', '=', 'estoque.id_produto')
+        ->join('imagem', 'produto.id_produto', '=', 'imagem.id_produto')
+        ->select('produto.id_produto', 'produto.ds_produto', 'produto.data_aquisicao', 'categoria_produto.ds_categoria',
+                 'preco.valor_venda', 'preco.status_desconto','preco.p_desconto', 'estoque.qtd_produto_estoque','imagem.*')
+        ->where('imagem.ds_imagem_produto','=','frente')
+        ->where('produto.ds_produto', 'like', '%'.$keyword.'%')
+        ->orWhere('categoria_produto.ds_categoria', 'like', '%'.$keyword.'%')
+        ->paginate(5);
+
+        // if (empty($itens->all())) {
+        //     return response()->json('Item não encontrado.', 404);
+        // }
+
+        return response()->json($itens, 200);
+    }
+
     public function listarCategorias()
     {
         $itens = CategoriaProduto::all();
@@ -95,6 +115,34 @@ class ProdutoController extends BaseController
 
     }
 
+    
+    
+
+    public function listarPorTipoPaginate($id_categoria) //Aqui o produto será listado de acordo com a categoria
+    {
+
+        
+        $itens = DB::table('produto')->join('categoria_produto', 'produto.id_categoria', '=', 'categoria_produto.id_categoria')
+        ->join('preco', 'produto.id_produto', '=', 'preco.id_produto')
+        ->join('estoque', 'produto.id_produto', '=', 'estoque.id_produto')
+        ->join('imagem', 'produto.id_produto', '=', 'imagem.id_produto')
+        ->select('produto.id_produto', 'produto.ds_produto', 'produto.data_aquisicao', 'categoria_produto.id_categoria','categoria_produto.ds_categoria',
+                 'preco.valor_venda', 'preco.p_desconto','preco.status_desconto','estoque.qtd_produto_estoque','imagem.*')
+         ->where('produto.id_categoria','=', $id_categoria)
+
+
+         ->where('imagem.ds_imagem_produto','=','frente')
+
+        ->paginate(5);
+        
+        // if (empty($itens->all())) {
+        // return response()->json('Dado não encontrado.', 404);
+        // }
+    
+        return response()->json($itens, 200);
+
+    }
+
     public function listarNovidades()
     {   
         $dados = $this->classe::join('categoria_produto', 'produto.id_categoria', '=', 'categoria_produto.id_categoria')
@@ -123,6 +171,41 @@ class ProdutoController extends BaseController
         if (empty($itens)) {
             return response()->json('Dado não encontrado', 404);
         }
+
+        return response()->json($itens, 200);
+
+    }
+
+    public function listarNovidadesPaginate()
+    {   
+        $dados = DB::table('produto')->join('categoria_produto', 'produto.id_categoria', '=', 'categoria_produto.id_categoria')
+        ->join('preco', 'produto.id_produto', '=', 'preco.id_produto')
+        ->join('estoque', 'produto.id_produto', '=', 'estoque.id_produto')
+        ->join('imagem', 'produto.id_produto', '=', 'imagem.id_produto')
+        ->where('imagem.ds_imagem_produto','=','frente')
+        ->select('produto.id_produto', 'produto.ds_produto', 'produto.data_aquisicao', 'categoria_produto.ds_categoria',
+                 'preco.valor_venda', 'preco.p_desconto','preco.status_desconto', 'estoque.qtd_produto_estoque','imagem.*')
+        ->paginate(5);
+        
+        // return response()->json($dados[2], 200);
+        
+        $dataAtual = Carbon::now();
+        
+        $itens=$dados;
+
+        foreach($dados as $dado)
+        {
+            $dataAquisicao = Carbon::createFromFormat('Y-m-d', $dado->data_aquisicao);
+            $tempoEntreDatas = $dataAquisicao->diffInDays($dataAtual);
+            
+            if ($tempoEntreDatas < 60){
+                $itens->data = $dado;
+            }
+        }
+
+        // if (empty($itens)) {
+        //     return response()->json('Dado não encontrado', 404);
+        // }
 
         return response()->json($itens, 200);
 
@@ -180,6 +263,26 @@ class ProdutoController extends BaseController
         }
 
         return response()->json($itens, 200);
+    }
+
+    public function listarTodosDescontosPaginate()
+    {
+        $dados = DB::table('produto')->join('categoria_produto', 'produto.id_categoria', '=', 'categoria_produto.id_categoria')
+        ->join('preco', 'produto.id_produto', '=', 'preco.id_produto')
+        ->join('estoque', 'produto.id_produto', '=', 'estoque.id_produto')
+        ->join('imagem', 'produto.id_produto', '=', 'imagem.id_produto')
+        ->where('imagem.ds_imagem_produto','=','frente')
+        ->where('preco.status_desconto','=','ativo')
+        ->select('produto.id_produto', 'produto.ds_produto', 'produto.data_aquisicao', 'categoria_produto.ds_categoria',
+                 'preco.valor_venda', 'preco.status_desconto','preco.p_desconto', 'estoque.qtd_produto_estoque','imagem.*')
+        ->paginate(5);
+
+
+        // if (empty($itens)) {
+        //     return response()->json('Dado não encontrado', 404);
+        // }
+
+        return response()->json($dados, 200);
     }
 
     public function listarBanner()

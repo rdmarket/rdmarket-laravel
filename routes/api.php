@@ -37,6 +37,18 @@ Route::apiResource('checkout', 'Api\checkout\CheckoutController');
 Route::get('/produtos/listarPorPesquisa/{keyword}', 'Api\ProdutoController@listarPorPesquisa')
 ->name('api.produtos.listarPorPesquisa');
 
+Route::get('/produtos/listarPorPesquisaPaginate/{keyword}', 'Api\ProdutoController@listarPorPesquisaPaginate')
+->name('api.produtos.listarPorPesquisaPaginate');
+
+Route::get('/produtos/listarPorTipoPaginate/{keyword}', 'Api\ProdutoController@listarPorTipoPaginate')
+->name('api.produtos.listarPorTipoPaginate');
+
+Route::get('/produtos/listarNovidadesPaginate', 'Api\ProdutoController@listarNovidadesPaginate')
+->name('api.produtos.listarNovidadesPaginate');
+
+Route::get('/produtos/listarTodosDescontosPaginate', 'Api\ProdutoController@listarTodosDescontosPaginate')
+->name('api.produtos.listarTodosDescontosPaginate');
+
 Route::get('/produtos/listarCategorias', 'Api\ProdutoController@listarCategorias')
 ->name('api.produtos.listarCategorias');
 
